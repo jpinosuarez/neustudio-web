@@ -1,0 +1,61 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import Button from '../ui/Button.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+  t('pricing.feature1'),
+  t('pricing.feature2'),
+  t('pricing.feature3'),
+  t('pricing.feature4'),
+];
+---
+
+<section class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="text-center">
+      <span class="inline-flex min-h-12 items-center rounded-xl border border-neu-dark/5 bg-neu-light px-4 text-sm font-semibold text-neu-muted">
+        {t('pricing.badge')}
+      </span>
+      <h2 class="mt-5 font-display text-4xl font-bold tracking-tight text-neu-dark md:text-5xl">
+        {t('pricing.title')}
+      </h2>
+    </div>
+
+    <div class="mx-auto mt-12 max-w-lg rounded-3xl border border-neu-dark/5 bg-neu-light p-8 text-center shadow-sm">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-neu-muted">
+        {t('pricing.planName')}
+      </p>
+
+      <div class="mt-6 flex items-end justify-center gap-2">
+        <span class="font-display text-5xl font-bold tracking-tight text-neu-dark md:text-6xl">
+          {t('pricing.price')}
+        </span>
+        <span class="pb-2 text-sm font-medium text-neu-muted">
+          {t('pricing.period')}
+        </span>
+      </div>
+
+      <ul class="mt-8 space-y-4 text-left">
+        {features.map((feature) => (
+          <li class="flex items-start gap-3 text-neu-dark">
+            <svg class="mt-0.5 h-5 w-5 shrink-0 text-neu-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M16.704 5.296a1 1 0 0 1 0 1.408l-7.2 7.2a1 1 0 0 1-1.408 0l-3.2-3.2a1 1 0 1 1 1.408-1.408l2.496 2.496 6.496-6.496a1 1 0 0 1 1.408 0Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span class="text-sm md:text-base">{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      <Button variant="accent" class="mt-8 w-full">
+        {t('pricing.cta')}
+      </Button>
+    </div>
+  </div>
+</section>

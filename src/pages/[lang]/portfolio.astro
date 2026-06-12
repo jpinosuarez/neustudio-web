@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+import Button from '../../components/ui/Button.astro';
+import type { Language } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'de' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+const contactPath = lang === 'es' ? '/contact' : `/${lang}/contact`;
+---
+
+<Layout lang={lang} title={t('pageTitles.portfolio')} description="Our success stories and case studies">
+  <header class="bg-neu-light py-24 text-center">
+    <div class="mx-auto max-w-3xl px-4">
+      <h1 class="font-display text-4xl font-bold tracking-tight text-neu-dark md:text-5xl">
+        {t('pageTitles.portfolio')}
+      </h1>
+      <p class="mt-4 text-lg text-neu-muted">
+        Discover how we've helped local businesses in Berlin scale their digital presence.
+      </p>
+    </div>
+  </header>
+
+  <section class="mx-auto max-w-7xl px-4 py-16">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="h-64 rounded-3xl border border-neu-dark/5 bg-white"></div>
+      <div class="h-64 rounded-3xl border border-neu-dark/5 bg-white"></div>
+    </div>
+  </section>
+
+  <section class="py-12 text-center">
+    <Button href={contactPath} variant="accent" size="lg">
+      {t('cta.proposal')}
+    </Button>
+  </section>
+</Layout>

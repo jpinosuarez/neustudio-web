@@ -18,7 +18,7 @@ interface AnchorProps
 
 interface ButtonProps
   extends SharedProps,
-    Omit<HTMLAttributes<'button'>, keyof SharedProps | 'href'> {
+    Omit<HTMLAttributes<'button'>, keyof SharedProps | 'href' | 'type'> {
   href?: undefined;
 }
 
@@ -61,8 +61,8 @@ const sharedProps = {
 const buttonProps = isLink
   ? undefined
   : {
-      type: 'button' as const,
       ...rest,
+      type: 'button' as const,
     };
 
 const anchorProps = isLink

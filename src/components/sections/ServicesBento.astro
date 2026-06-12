@@ -1,0 +1,102 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const copyByLanguage = {
+  es: {
+    eyebrow: 'Nuestro Enfoque',
+    heading: 'Webs que trabajan por ti, no al revés',
+    speedTitle: 'Velocidad que vende',
+    speedDescription:
+      'Arquitectura ligera, carga instantánea y una base técnica pensada para rendimiento real en móvil y desktop.',
+    waasTitle: 'Mantenimiento incluido',
+    waasDescription:
+      'Publicas, actualizas y escalas sin depender de tickets eternos ni costes ocultos cada mes.',
+    seoTitle: 'SEO y conversión integrados',
+    seoDescription:
+      'Estructura clara, mensajes directos y señales de confianza que convierten visitas locales en consultas.',
+  },
+  en: {
+    eyebrow: 'Our Approach',
+    heading: 'Websites that work for you, not the other way around',
+    speedTitle: 'Speed that sells',
+    speedDescription:
+      'Lightweight architecture, instant loading, and a technical foundation built for real performance on mobile and desktop.',
+    waasTitle: 'Maintenance included',
+    waasDescription:
+      'Publish, update, and scale without endless tickets or hidden monthly costs.',
+    seoTitle: 'SEO and conversion built in',
+    seoDescription:
+      'Clear structure, direct messaging, and trust signals that turn local visits into enquiries.',
+  },
+  de: {
+    eyebrow: 'Unser Ansatz',
+    heading: 'Websites, die für dich arbeiten, nicht umgekehrt',
+    speedTitle: 'Geschwindigkeit, die verkauft',
+    speedDescription:
+      'Leichte Architektur, sofortiges Laden und ein technisches Fundament für echte Performance auf Mobile und Desktop.',
+    waasTitle: 'Wartung inklusive',
+    waasDescription:
+      'Veröffentlichen, aktualisieren und wachsen, ohne endlose Tickets oder versteckte monatliche Kosten.',
+    seoTitle: 'SEO und Conversion integriert',
+    seoDescription:
+      'Klare Struktur, direkte Botschaften und Vertrauenssignale, die lokale Besucher in Anfragen verwandeln.',
+  },
+} as const;
+
+const defaults = copyByLanguage[lang];
+
+const readText = (key: string, fallback: string) => {
+  const translated = t(key as never);
+
+  return translated === key ? fallback : translated;
+};
+
+const sectionLabel = readText('services.eyebrow', defaults.eyebrow);
+const sectionHeading = readText('services.heading', defaults.heading);
+
+const services = [
+  {
+    title: readText('services.items.speed.title', defaults.speedTitle),
+    description: readText('services.items.speed.description', defaults.speedDescription),
+    accentClass: 'bg-neu-brand/10 text-neu-brand',
+  },
+  {
+    title: readText('services.items.waas.title', defaults.waasTitle),
+    description: readText('services.items.waas.description', defaults.waasDescription),
+    accentClass: 'bg-neu-dark/5 text-neu-dark',
+  },
+  {
+    title: readText('services.items.seo.title', defaults.seoTitle),
+    description: readText('services.items.seo.description', defaults.seoDescription),
+    accentClass: 'bg-neu-accent/10 text-neu-accent',
+  },
+];
+---
+
+<section class="bg-neu-light py-24">
+  <div class="mx-auto max-w-7xl px-4 md:px-6">
+    <div class="max-w-3xl">
+      <div class="inline-flex min-h-12 items-center rounded-xl border border-neu-dark/5 bg-white px-4 text-sm font-semibold text-neu-muted">
+        {sectionLabel}
+      </div>
+      <h2 class="mt-5 font-display text-3xl font-bold tracking-tight text-neu-dark md:text-5xl">
+        {sectionHeading}
+      </h2>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+      {services.map((service) => (
+        <article class="flex h-full flex-col rounded-3xl border border-neu-dark/5 bg-white p-8 shadow-sm">
+          <div class={`mb-6 flex h-12 w-12 items-center justify-center rounded-full ${service.accentClass}`}>
+            <span class="h-3 w-3 rounded-full bg-current" aria-hidden="true"></span>
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-neu-dark">{service.title}</h3>
+          <p class="text-neu-muted">{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

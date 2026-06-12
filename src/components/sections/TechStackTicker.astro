@@ -1,0 +1,21 @@
+---
+const trustSignals = [
+  'Lighthouse 100/100',
+  'Global Edge CDN',
+  'SEO Optimized',
+  'Zero Maintenance',
+];
+---
+
+<section class="w-full border-y border-neu-dark/5 bg-white py-8" aria-label="Technical trust signals">
+  <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 md:px-6">
+    {trustSignals.map((signal) => (
+      <div class="inline-flex items-center gap-2 text-sm font-medium text-neu-muted">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full border border-neu-dark/10 bg-neu-light/70">
+          <span class="h-2.5 w-2.5 rounded-full bg-current/60" aria-hidden="true"></span>
+        </span>
+        <span>{signal}</span>
+      </div>
+    ))}
+  </div>
+</section>

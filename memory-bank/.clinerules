@@ -1,0 +1,18 @@
+# NeuStudio - WaaS Architecture Rules
+
+## General Directives (Always Active)
+- **DSGVO Compliance First:** NEVER integrate external tracking scripts, CDNs (e.g., Google Fonts), or third-party analytics without explicit prior consent logic. All fonts and assets MUST be hosted locally.
+- **Output Style:** Do not provide long theoretical explanations. Output production-ready code directly.
+- **Gatekeeper:** If you detect a performance or compliance issue in my prompt, STOP and suggest a better, static alternative before writing code.
+- **Memory Bank:** Always consult the `memory-bank/` directory (`projectbrief.md`, `architecture.md`, `activeContext.md`) to maintain project context before executing complex architectural changes.
+
+[*.{astro,tsx,jsx}]
+- **Tech Stack:** Astro (SSG, zero client-side JS by default) + Tailwind CSS (Mobile-first).
+- **Component Reuse:** ALWAYS read the contents of `src/components/ui/` to check for existing components (like Buttons, Cards, Logos) before creating new ones. Match existing props exactly.
+- **Client-Side JS Limits:** NEVER install third-party UI libraries (React, Framer Motion) unless explicitly asked. Use Vanilla JS inside Astro `<script>` tags EXCLUSIVAMENTE for UI toggles (menus, modals). Data fetching must happen on the server.
+
+[*.ts]
+- **Strict Logic:** Strict TypeScript only. No `any` types allowed.
+
+[src/i18n/**/*]
+- **Zero Hardcoded Text:** All visible copy must be consumed from `src/i18n/ui.ts`. Translation keys must be semantic and maintain the native i18n structure (ES/EN/DE) using dynamic routing `/[lang]/`.

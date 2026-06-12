@@ -1,6 +1,7 @@
 ---
 import Head from '../components/layout/Head.astro';
 import Header from '@components/layout/Header.astro';
+import Footer from '@components/layout/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -23,10 +24,6 @@ const { lang, title, description, image } = Astro.props;
       <slot />
     </main>
 
-    <footer class="border-t border-neu-muted/20">
-      <div class="mx-auto max-w-6xl px-6 py-4 text-sm text-neu-muted">
-        © {new Date().getFullYear()} NeuStudio.
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

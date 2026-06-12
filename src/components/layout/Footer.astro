@@ -1,0 +1,52 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import Logo from '@components/ui/Logo.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const localizedPath = (path: string) => (lang === 'es' ? path : `/${lang}${path}`);
+---
+
+<footer class="border-t border-neu-dark/5 bg-white py-12 md:py-16">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div>
+        <a href={localizedPath('/')} aria-label={t('nav.home')} class="inline-flex">
+          <Logo />
+        </a>
+        <p class="mt-4 text-sm text-neu-muted">
+          {t('footer.tagline')}
+        </p>
+      </div>
+
+      <div>
+        <span class="mb-4 block font-bold text-neu-dark">{t('footer.links')}</span>
+        <nav class="flex flex-col gap-3">
+          <a href={localizedPath('/services')} class="text-sm text-neu-muted transition-colors hover:text-neu-dark">
+            {t('nav.services')}
+          </a>
+          <a href={localizedPath('/portfolio')} class="text-sm text-neu-muted transition-colors hover:text-neu-dark">
+            {t('nav.portfolio')}
+          </a>
+        </nav>
+      </div>
+
+      <div>
+        <span class="mb-4 block font-bold text-neu-dark">{t('footer.legal')}</span>
+        <nav class="flex flex-col gap-3">
+          <a href={localizedPath('/impressum')} class="text-sm text-neu-muted transition-colors hover:text-neu-dark">
+            {t('footer.impressum')}
+          </a>
+          <a href={localizedPath('/privacy')} class="text-sm text-neu-muted transition-colors hover:text-neu-dark">
+            {t('footer.privacy')}
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-neu-dark/5 pt-8 text-sm text-neu-muted md:flex-row">
+      <span>{t('footer.copyright')}</span>
+    </div>
+  </div>
+</footer>
