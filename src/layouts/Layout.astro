@@ -1,5 +1,6 @@
 ---
 import Head from '../components/layout/Head.astro';
+import Header from '@components/layout/Header.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -16,11 +17,7 @@ const { lang, title, description, image } = Astro.props;
 <html lang={lang}>
   <Head lang={lang} title={title} description={description} image={image} />
   <body class="bg-neu-light font-sans text-neu-dark">
-    <header class="border-b border-neu-muted/20">
-      <div class="mx-auto max-w-6xl px-6 py-4">
-        <p class="font-display text-lg">NeuStudio</p>
-      </div>
-    </header>
+    <Header />
 
     <main>
       <slot />

@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="px-4 py-16 md:px-6 lg:py-24 max-w-7xl mx-auto flex flex-col items-center text-center">
+  <div class="max-w-4xl">
+    <div class="rounded-xl bg-neu-brand/10 text-neu-dark px-3 py-1 text-sm font-semibold mb-4 inline-flex items-center gap-1">
+      <svg class="w-4 h-4 text-neu-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2.25l2.934 5.94 6.556.953-4.745 4.627 1.12 6.53L12 17.97l-5.865 3.33 1.12-6.53L2.51 9.143l6.556-.953L12 2.25z" />
+      </svg>
+      <span>{t('hero.socialProof')}</span>
+    </div>
+    <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neu-dark mt-6 leading-tight">
+      {t('hero.headline')}
+    </h1>
+    <p class="font-sans text-lg md:text-xl text-neu-muted mt-4 max-w-2xl mx-auto">
+      {t('hero.subtitle')}
+    </p>
+    <div class="flex flex-col md:flex-row gap-4 mt-8">
+      <a
+        href={`/${lang}/contact`}
+        class="inline-flex items-center justify-center rounded-xl px-8 py-3 bg-neu-accent text-white font-semibold shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-base md:text-lg min-w-[192px] min-h-[48px]"
+      >
+        {t('hero.primaryCta')}
+      </a>
+      <a
+        href={`/${lang}/portfolio`}
+        class="inline-flex items-center justify-center rounded-xl px-8 py-3 border border-neu-muted text-neu-muted font-semibold hover:bg-neu-light transition-colors text-base md:text-lg min-w-[192px] min-h-[48px]"
+      >
+        {t('hero.secondaryCta')}
+      </a>
+    </div>
+    <p class="mt-4 text-sm text-neu-muted/70">
+      {t('hero.trustSignal')}
+    </p>
+  </div>
+</section>

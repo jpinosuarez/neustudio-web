@@ -1,0 +1,126 @@
+---
+import Logo from '@components/ui/Logo.astro';
+import Button from '@components/ui/Button.astro';
+import LanguagePicker from '@components/ui/LanguagePicker.astro';
+import { defaultLanguage, type Language } from '@i18n/ui';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+interface Props {
+  class?: string;
+}
+
+const lang: Language = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { class: className } = Astro.props as Props;
+
+const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
+const localizedContactHref = lang === defaultLanguage ? '/contacto' : `/${lang}/contacto`;
+
+const navItems = [
+  { key: 'nav.services' as const, href: `${localizedRoot}#services` },
+  { key: 'nav.portfolio' as const, href: `${localizedRoot}#portfolio` },
+] as const;
+---
+
+<header class={`sticky top-0 z-50 border-b border-neu-dark/5 bg-white/80 backdrop-blur-md transition-all ${className ?? ''}`.trim()}>
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:px-8">
+    <a href={localizedRoot} class="inline-flex min-h-12 items-center" aria-label={t('nav.home')}>
+      <Logo />
+    </a>
+
+    <nav aria-label="Primary navigation" class="hidden md:flex gap-8">
+      {navItems.map((item) => (
+        <a href={item.href} class="text-sm font-medium text-neu-dark transition-colors hover:text-neu-brand">
+          {t(item.key)}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <LanguagePicker />
+      <Button variant="accent" href={localizedContactHref} size="sm">
+        {t('cta.proposal')}
+      </Button>
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        class="inline-flex min-h-12 min-w-12 items-center justify-center rounded-xl border border-neu-dark/5 text-neu-dark transition-colors hover:text-neu-brand md:hidden"
+        aria-label={t('nav.menu')}
+        aria-expanded="false"
+      >
+        <span class="relative block h-4 w-5">
+          <span class="absolute left-0 top-0 block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="absolute left-0 top-1.5 block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="absolute left-0 bottom-0 block h-0.5 w-5 rounded-full bg-current"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden absolute left-0 top-20 w-full border-b border-neu-dark/5 bg-white shadow-sm">
+    <nav aria-label="Mobile primary navigation" class="flex flex-col">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="block border-b border-neu-light px-4 py-4 text-base font-medium text-neu-dark hover:bg-neu-light"
+        >
+          {t(item.key)}
+        </a>
+      ))}
+    </nav>
+
+    <div class="border-b border-neu-light px-4 py-4">
+      <LanguagePicker />
+    </div>
+
+    <div class="px-4 py-4">
+      <Button variant="accent" href={localizedContactHref} size="sm" class="w-full">
+        {t('cta.proposal')}
+      </Button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleButton = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (toggleButton instanceof HTMLButtonElement && mobileMenu instanceof HTMLElement) {
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    };
+
+    const openMenu = () => {
+      mobileMenu.classList.remove('hidden');
+      toggleButton.setAttribute('aria-expanded', 'true');
+    };
+
+    const isMenuOpen = () => !mobileMenu.classList.contains('hidden');
+
+    toggleButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      if (isMenuOpen()) {
+        closeMenu();
+        return;
+      }
+
+      openMenu();
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+
+      if (target instanceof Node && !toggleButton.contains(target) && !mobileMenu.contains(target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    });
+  }
+</script>

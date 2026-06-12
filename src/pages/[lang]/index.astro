@@ -1,26 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-import { languages, type Language } from '@i18n/ui';
+import HomePage from '../../views/HomePage.astro';
 
 export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang } }));
+  return [{ params: { lang: 'en' } }, { params: { lang: 'de' } }];
 }
 
-const lang = getLangFromUrl(Astro.url) as Language;
-const t = useTranslations(lang);
+const { lang } = Astro.params as { lang: 'en' | 'de' };
 ---
 
-<Layout
-  lang={lang}
-  title="NeuStudio"
-  description="Clean, vanilla Astro starter with Tailwind CSS and strict TypeScript."
->
-  <section class="mx-auto max-w-6xl px-6 py-20">
-    <h1 class="text-4xl">Vanilla Astro + Tailwind</h1>
-    <p class="mt-4 max-w-2xl text-neu-muted">
-      Minimal foundation project with strict semantic tokens and a reusable layout system.
-    </p>
-    <p class="mt-6 text-sm text-neu-muted">{t('footer.tagline')}</p>
-  </section>
-</Layout>
+<HomePage lang={lang} />

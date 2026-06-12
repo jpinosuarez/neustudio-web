@@ -1,0 +1,33 @@
+---
+import { defaultLanguage, languages, type Language } from '@i18n/ui';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+function getLocalizedHomeHref(locale: Language): string {
+  return locale === defaultLanguage ? '/' : `/${locale}/`;
+}
+---
+
+<nav aria-label={t('nav.language')} class="inline-flex items-center text-sm font-medium">
+  {languages.map((locale, index) => {
+    const isActive = locale === lang;
+
+    return (
+      <span class="inline-flex items-center">
+        {index > 0 && <span aria-hidden="true" class="px-1 text-neu-muted">/</span>}
+        <a
+          href={getLocalizedHomeHref(locale)}
+          aria-current={isActive ? 'page' : undefined}
+          class:list={{
+            'font-bold text-neu-dark': isActive,
+            'text-neu-muted transition-colors hover:text-neu-brand': !isActive,
+          }}
+        >
+          {locale.toUpperCase()}
+        </a>
+      </span>
+    );
+  })}
+</nav>
