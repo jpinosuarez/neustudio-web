@@ -1,11 +1,15 @@
 ---
+import { defaultLanguage, languages, type Language } from '@i18n/ui';
+
 interface Props {
+  lang: Language;
   title?: string;
   description?: string;
   image?: string;
 }
 
 const {
+  lang,
   title = 'NeuStudio',
   description = 'Vanilla Astro project with Tailwind CSS.',
   image = '/og-image.png',
@@ -13,13 +17,36 @@ const {
 
 const siteUrl = Astro.site ?? new URL('http://localhost:4321');
 const ogImage = new URL(image, siteUrl).toString();
+
+const pathnameSegments = Astro.url.pathname.split('/').filter(Boolean);
+if (languages.includes(pathnameSegments[0] as Language)) {
+  pathnameSegments.shift();
+}
+const remainingPath = pathnameSegments.join('/');
+
+function buildLocalizedHref(locale: Language): string {
+  const path = locale === defaultLanguage ? `/${remainingPath}` : `/${locale}/${remainingPath}`;
+  const normalizedPath = path === '/' ? '/' : path.replace(/\/+/g, '/');
+
+  return new URL(normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`, siteUrl).toString();
+}
+
+const hreflangLinks = languages.map((locale) => ({
+  locale,
+  href: buildLocalizedHref(locale),
+}));
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="content-language" content={lang} />
   <title>{title}</title>
   <meta name="description" content={description} />
+
+  {hreflangLinks.map(({ locale, href }) => (
+    <link rel="alternate" hreflang={locale} href={href} />
+  ))}
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />

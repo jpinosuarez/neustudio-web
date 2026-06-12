@@ -3,17 +3,18 @@ import Head from '../components/layout/Head.astro';
 import '../styles/global.css';
 
 interface Props {
+  lang: 'es' | 'en' | 'de';
   title?: string;
   description?: string;
   image?: string;
 }
 
-const { title, description, image } = Astro.props;
+const { lang, title, description, image } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-  <Head title={title} description={description} image={image} />
+<html lang={lang}>
+  <Head lang={lang} title={title} description={description} image={image} />
   <body class="bg-neu-light font-sans text-neu-dark">
     <header class="border-b border-neu-muted/20">
       <div class="mx-auto max-w-6xl px-6 py-4">
