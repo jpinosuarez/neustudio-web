@@ -1,0 +1,84 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Variant = 'primary' | 'accent' | 'outline' | 'ghost';
+type Size = 'sm' | 'md' | 'lg';
+
+interface SharedProps {
+  variant?: Variant;
+  size?: Size;
+  class?: string;
+}
+
+interface AnchorProps
+  extends SharedProps,
+    Omit<HTMLAttributes<'a'>, keyof SharedProps | 'href'> {
+  href: string;
+}
+
+interface ButtonProps
+  extends SharedProps,
+    Omit<HTMLAttributes<'button'>, keyof SharedProps | 'href'> {
+  href?: undefined;
+}
+
+type Props = AnchorProps | ButtonProps;
+
+const {
+  class: className,
+  size = 'md',
+  variant = 'primary',
+  href,
+  ...rest
+} = Astro.props;
+
+const isLink = typeof href === 'string';
+
+const baseClasses =
+  'inline-flex min-h-12 items-center justify-center rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neu-brand focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+
+const variantClasses: Record<Variant, string> = {
+  primary: 'bg-neu-brand text-white',
+  accent: 'bg-neu-accent text-white',
+  outline: 'border border-neu-muted bg-transparent text-neu-dark',
+  ghost: 'bg-transparent text-neu-dark hover:bg-neu-dark/5',
+};
+
+const sizeClasses: Record<Size, string> = {
+  sm: 'px-3 text-sm min-h-12',
+  md: 'px-4 py-3 text-base',
+  lg: 'px-6 py-4 text-lg',
+};
+
+const classes = [baseClasses, variantClasses[variant], sizeClasses[size], className]
+  .filter(Boolean)
+  .join(' ');
+
+const sharedProps = {
+  class: classes,
+};
+
+const buttonProps = isLink
+  ? undefined
+  : {
+      type: 'button' as const,
+      ...rest,
+    };
+
+const anchorProps = isLink
+  ? {
+      href,
+      ...rest,
+    }
+  : undefined;
+---
+
+{isLink ? (
+  <a {...anchorProps} {...sharedProps}>
+    <slot />
+  </a>
+) : (
+  <button {...buttonProps} {...sharedProps}>
+    <slot />
+  </button>
+)}
