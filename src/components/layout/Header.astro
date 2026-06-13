@@ -26,7 +26,7 @@ const navItems = [
 ] as const;
 ---
 
-<header class={`sticky top-0 z-50 border-b border-neu-dark/5 bg-white/80 backdrop-blur-md transition-all ${className ?? ''}`.trim()}>
+<header class={`sticky top-0 z-50 border-b border-neu-dark/5 bg-white/80 backdrop-blur-md transition-all pt-[env(safe-area-inset-top)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] ${className ?? ''}`.trim()}>
   <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:px-8">
     <a href={localizedRoot} class="inline-flex min-h-12 items-center" aria-label={t('nav.home')}>
       <Logo />
@@ -61,7 +61,7 @@ const navItems = [
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden absolute left-0 top-20 w-full border-b border-neu-dark/5 bg-white shadow-sm">
+  <div id="mobile-menu" class="hidden md:hidden absolute left-0 top-full w-full border-b border-neu-dark/5 bg-white shadow-sm">
     <nav aria-label="Mobile primary navigation" class="flex flex-col">
       {navItems.map((item) => (
         <a
