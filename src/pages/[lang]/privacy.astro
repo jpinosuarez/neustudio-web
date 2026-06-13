@@ -15,17 +15,350 @@ const { lang } = Astro.params as { lang: Language };
 const t = useTranslations(lang);
 ---
 
-<Layout lang={lang} title={t('pageTitles.privacy')} description="Privacy policy for NeuStudio">
+<Layout lang={lang} title={t('pageTitles.privacy')} description="Privacy Policy for NeuStudio">
   <main class="mx-auto max-w-3xl px-4 py-24 prose prose-slate md:prose-lg prose-headings:font-display prose-headings:tracking-tight prose-a:text-neu-brand">
-    <h1>{t('pageTitles.privacy')}</h1>
 
-    <h2>Datenschutz auf einen Blick</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- German Privacy Policy Block -->
+    {lang === 'de' && (
+      <Fragment>
+        <h1>Datenschutzerklärung</h1>
 
-    <h2>Kontakt</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <h2>1. Datenschutz auf einen Blick</h2>
+        <h3>Allgemeine Hinweise</h3>
+        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen[cite: 8]. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können[cite: 8]. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung[cite: 8].</p>
 
-    <h2>Ihre Rechte</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>Datenerfassung auf dieser Website</h3>
+        <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+        <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber[cite: 8]. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen[cite: 8].</p>
+
+        <h4>Wie erfassen wir Ihre Daten?</h4>
+        <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen[cite: 8]. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben[cite: 8].</p>
+        <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst[cite: 8]. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)[cite: 8]. Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten[cite: 8].</p>
+
+        <h4>Wofür nutzen wir Ihre Daten?</h4>
+        <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten[cite: 8]. Andere Daten können zur Analyse Ihres Nutzerverhalten verwendet werden[cite: 8]. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet[cite: 8].</p>
+
+        <h4>Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
+        <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten[cite: 8]. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen[cite: 8]. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen[cite: 8]. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen[cite: 8]. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu[cite: 8].</p>
+        <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden[cite: 8].</p>
+
+        <h2>2. Hosting</h2>
+        <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+        <h3>Externes Hosting</h3>
+        <p>Diese Website wird extern gehostet[cite: 8]. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert[cite: 8]. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln[cite: 8].</p>
+        <p>Das externe Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO)[cite: 8]. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TDDDG umfasst[cite: 8]. Die Einwilligung ist jederzeit widerrufbar[cite: 8].</p>
+        <p>Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen[cite: 8].</p>
+        <p>Wir setzen folgende(n) Hoster ein:<br />
+        <strong>Netlify - 512 2nd Street, Suite 200, San Francisco, CA 94107, USA.</strong>[cite: 8]</p>
+        <h3>Auftragsverarbeitung</h3>
+        <p>Wir haben einen Vertrag über Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen[cite: 8]. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gewährleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet[cite: 8].</p>
+
+        <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+        <h3>Datenschutz</h3>
+        <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst[cite: 8]. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung[cite: 8].</p>
+        <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben[cite: 8]. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können[cite: 8]. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen[cite: 8]. Sie erläutert auch, wie und zu welchem Zweck das geschieht[cite: 8].</p>
+        <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann[cite: 8]. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich[cite: 8].</p>
+
+        <h3>Hinweis zur verantwortlichen Stelle</h3>
+        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br />
+        <strong>Dante Joaquin Pino Suarez</strong><br />
+        Ufnaustraße 16<br />
+        10553 Berlin<br />
+        Telefon: 016096579389<br />
+        E-Mail: pinosuarezjoaquin@gmail.com[cite: 8]</p>
+        <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet[cite: 8].</p>
+
+        <h3>Speicherdauer</h3>
+        <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt[cite: 8]. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe[cite: 8].</p>
+
+        <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3>
+        <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden[cite: 8]. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO[cite: 8]. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endgerät (z. B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG[cite: 8]. Die Einwilligung is jederzeit widerrufbar[cite: 8]. Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO[cite: 8]. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind, auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO[cite: 8]. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen[cite: 8]. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert[cite: 8].</p>
+
+        <h3>Empfänger von personenbezogenen Daten</h3>
+        <p>Im Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen externen Stellen zusammen[cite: 8]. Dabei ist teilweise auch eine Übermittlung von personenbezogenen Daten an diese externen Stellen erforderlich[cite: 8]. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z. B. Weitergabe von Daten an Steuerbehörden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt[cite: 8]. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines gültigen Vertrags über Auftragsverarbeitung weiter[cite: 8]. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag über gemeinsame Verarbeitung geschlossen[cite: 8].</p>
+
+        <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+        <p>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich[cite: 8]. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen[cite: 8]. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt[cite: 8].</p>
+
+        <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3>
+        <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING[cite: 8]. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG[cite: 8]. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO)[cite: 8].</p>
+        <p>WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT[cite: 8]. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO)[cite: 8].</p>
+
+        <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+        <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu[cite: 8]. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe[cite: 8].</p>
+
+        <h3>Recht auf Datenübertragbarkeit</h3>
+        <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisierte verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen[cite: 8]. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist[cite: 8].</p>
+
+        <h3>Auskunft, Berichtigung und Löschung</h3>
+        <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten[cite: 8]. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden[cite: 8].</p>
+
+        <h3>Recht auf Einschränkung der Verarbeitung</h3>
+        <p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen[cite: 8]. Hierzu können Sie sich jederzeit an uns wenden[cite: 8]. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:</p>
+        <ul>
+          <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen[cite: 8]. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen[cite: 8].</li>
+          <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen[cite: 8].</li>
+          <li>Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen[cite: 8].</li>
+          <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden[cite: 8]. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen[cite: 8].</li>
+        </ul>
+        <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden[cite: 8].</p>
+
+        <h3>SSL- bzw. TLS-Verschlüsselung</h3>
+        <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung[cite: 8]. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile[cite: 8].</p>
+        <p>Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden[cite: 8].</p>
+
+        <h2>4. Datenerfassung auf dieser Website</h2>
+        <h3>Cookies</h3>
+        <p>Unsere Internetseiten verwenden so genannte „Cookies“[cite: 8]. Cookies sind kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an[cite: 8]. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert[cite: 8]. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht[cite: 8]. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt[cite: 8].</p>
+        <p>Cookies können von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies)[cite: 8]. Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z. B. Cookies zur Abwicklung von Zahlungsdienstleistungen)[cite: 8].</p>
+        <p>Cookies haben verschiedene Funktionen[cite: 8]. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren würden (z. B. die Warenkorbfunktion oder die Anzeige von Videos)[cite: 8]. Andere Cookies können zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden[cite: 8].</p>
+        <p>Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z. B. für die Warenkorbfunktion) oder zur Optimierung der Website (z. B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird[cite: 8]. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste[cite: 8]. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar[cite: 8].</p>
+        <p>Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren[cite: 8]. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein[cite: 8].</p>
+
+        <h3>Kontaktformular</h3>
+        <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert[cite: 8]. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter[cite: 8].</p>
+        <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist[cite: 8]. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar[cite: 8].</p>
+        <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage)[cite: 8]. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt[cite: 8].</p>
+
+        <h3>Anfrage per E-Mail, Telefon oder Telefax</h3>
+        <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet[cite: 8]. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter[cite: 8].</p>
+        <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist[cite: 8]. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar[cite: 8].</p>
+        <p>Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens)[cite: 8]. Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt[cite: 8].</p>
+
+        <h2>5. Plugins und Tools</h2>
+        <h3>Google Fonts (lokales Hosting)</h3>
+        <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden[cite: 8]. Die Google Fonts sind lokal installiert[cite: 8]. Eine Verbindung zu Servern von Google findet dabei nicht statt[cite: 8].</p>
+        <p>Weitere Informationen zu Google Fonts finden Sie unter <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a> und in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=de</a>[cite: 8].</p>
+      </Fragment>
+    )}
+
+    <!-- English Privacy Policy Block -->
+    {lang === 'en' && (
+      <Fragment>
+        <h1>Privacy Policy</h1>
+
+        <h2>1. Data Protection at a Glance</h2>
+        <h3>General Information</h3>
+        <p>The following notes provide a simple overview of what happens to your personal data when you visit this website[cite: 10]. Personal data is any data with which you can be personally identified[cite: 10]. Detailed information on the subject of data protection can be found in our privacy policy listed below this text[cite: 10].</p>
+
+        <h3>Data Collection on This Website</h3>
+        <h4>Who is responsible for data collection on this website?</h4>
+        <p>Data processing on this website is carried out by the website operator[cite: 10]. Their contact details can be found in the "Information on the responsible party" section of this privacy policy[cite: 10].</p>
+
+        <h4>How do we collect your data?</h4>
+        <p>On one hand, your data is collected when you communicate it to us[cite: 10]. This can be, for example, data that you enter into a contact form[cite: 10].</p>
+        <p>Other data is collected automatically or after your consent when visiting the website by our IT systems[cite: 10]. This is mainly technical data (e.g., internet browser, operating system, or time of the page view)[cite: 10]. This data is collected automatically as soon as you enter this website[cite: 10].</p>
+
+        <h4>What do we use your data for?</h4>
+        <p>Part of the data is collected to ensure the error-free provision of the website[cite: 10]. Other data can be used to analyze your user behavior[cite: 10]. If contracts can be concluded or initiated via the website, the transmitted data will also be processed for contract offers, orders, or other order inquiries[cite: 10].</p>
+
+        <h4>What rights do you have regarding your data?</h4>
+        <p>You have the right at any time to receive information free of charge about the origin, recipient, and purpose of your stored personal data[cite: 10]. You also have a right to request the correction or deletion of this data[cite: 10]. If you have given your consent to data processing, you can revoke this consent at any time for the future[cite: 10]. You also have the right, under certain circumstances, to request the restriction of the processing of your personal data[cite: 10]. Furthermore, you have a right to lodge a complaint with the competent supervisory authority[cite: 10].</p>
+        <p>You can contact us at any time regarding this and other questions on the subject of data protection[cite: 10].</p>
+
+        <h2>2. Hosting</h2>
+        <p>We host the content of our website with the following provider:</p>
+        <h3>External Hosting</h3>
+        <p>This website is hosted externally[cite: 10]. The personal data collected on this website is stored on the servers of the hoster(s)[cite: 10]. This can primarily be IP addresses, contact inquiries, meta and communication data, contract data, contact details, names, website access, and other data generated via a website[cite: 10].</p>
+        <p>External hosting is carried out for the purpose of fulfilling contracts with our potential and existing clients (Art. 6 Abs. 1 lit. b GDPR) and in the interest of a secure, fast, and efficient provision of our online offer by a professional provider (Art. 6 Abs. 1 lit. f GDPR)[cite: 10]. If a corresponding consent has been requested, processing takes place exclusively on the basis of Art. 6 Abs. 1 lit. a GDPR and § 25 Abs. 1 TDDDG, insofar as the consent includes the storage of cookies or access to information in the user's terminal equipment (e.g., device fingerprinting) within the meaning of the TDDDG[cite: 10]. The consent can be revoked at any time[cite: 10].</p>
+        <p>Our hoster(s) will only process your data to the extent necessary to fulfill its performance obligations and will follow our instructions regarding this data[cite: 10].</p>
+        <p>We use the following hoster:<br />
+        <strong>Netlify - 512 2nd Street, Suite 200, San Francisco, CA 94107, USA.</strong>[cite: 10]</p>
+        <h3>Data Processing Agreement</h3>
+        <p>We have concluded a data processing agreement (DPA) for the use of the above-mentioned service[cite: 10]. This is a contract required by data protection law, which ensures that the provider processes the personal data of our website visitors only in accordance with our instructions and in compliance with the GDPR[cite: 10].</p>
+
+        <h2>3. General Notes and Required Information</h2>
+        <h3>Data Protection</h3>
+        <p>The operators of these pages take the protection of your personal data very seriously[cite: 10]. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy[cite: 10].</p>
+        <p>When you use this website, various personal data are collected[cite: 10]. Personal data is data with which you can be personally identified[cite: 10]. This privacy policy explains what data we collect and what we use it for[cite: 10]. It also explains how and for what purpose this happens[cite: 10].</p>
+        <p>We point out that data transmission over the Internet (e.g., when communicating by email) can have security gaps[cite: 10]. A complete protection of data against access by third parties is not possible[cite: 10].</p>
+
+        <h3>Information on the Responsible Party</h3>
+        <p>The responsible party for data processing on this website is:<br />
+        <strong>Dante Joaquin Pino Suarez</strong><br />
+        Ufnaustraße 16<br />
+        10553 Berlin<br />
+        Phone: 016096579389<br />
+        Email: pinosuarezjoaquin@gmail.com[cite: 10]</p>
+        <p>The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g., names, email addresses, etc.)[cite: 10].</p>
+
+        <h3>Storage Period</h3>
+        <p>Unless a more specific storage period has been specified within this privacy policy, your personal data will remain with us until the purpose for data processing no longer applies[cite: 10]. If you assert a legitimate request for deletion or revoke your consent to data processing, your data will be deleted unless we have other legally permissible reasons for storing your personal data (e.g., tax or commercial law retention periods); in the latter case, deletion takes place after these reasons no longer apply[cite: 10].</p>
+
+        <h3>General Notes on the Legal Basis for Data Processing on this Website</h3>
+        <p>If you have consented to data processing, we process your personal data on the basis of Art. 6 Abs. 1 lit. a GDPR or Art. 9 Abs. 2 lit. a GDPR if special categories of data according to Art. 9 Abs. 1 GDPR are processed[cite: 10]. In the case of explicit consent to the transfer of personal data to third countries, data processing is also based on Art. 49 Abs. 1 lit. a GDPR[cite: 10]. If you have consented to the storage of cookies or to access to information in your terminal device (e.g., via device fingerprinting), data processing is additionally based on § 25 Abs. 1 TDDDG[cite: 10]. Consent can be revoked at any time[cite: 10]. If your data is required for contract fulfillment or to carry out pre-contractual measures, we process your data on the basis of Art. 6 Abs. 1 lit. b GDPR[cite: 10]. Furthermore, we process your data if it is required to fulfill a legal obligation on the basis of Art. 6 Abs. 1 lit. c GDPR[cite: 10]. Data processing can also take place on the basis of our legitimate interest according to Art. 6 Abs. 1 lit. f GDPR[cite: 10]. Information about the legal basis applicable in each individual case is provided in the following paragraphs of this privacy policy[cite: 10].</p>
+
+        <h3>Recipients of Personal Data</h3>
+        <p>As part of our business activities, we work with various external bodies[cite: 10]. In some cases, a transfer of personal data to these external bodies is also necessary[cite: 10]. We only pass on personal data to external bodies if this is necessary within the framework of contract fulfillment, if we are legally obliged to do so (e.g., passing on data to tax authorities), if we have a legitimate interest according to Art. 6 Abs. 1 lit. f GDPR in passing it on, or if another legal basis permits the data transfer[cite: 10]. When using processors, we only pass on personal data of our clients on the basis of a valid contract on data processing[cite: 10]. In the case of joint processing, a joint processing contract is concluded[cite: 10].</p>
+
+        <h3>Revocation of Your Consent to Data Processing</h3>
+        <p>Many data processing operations are only possible with your express consent[cite: 10]. You can revoke consent you have already given at any time[cite: 10]. The legality of the data processing carried out up to the revocation remains unaffected by the revocation[cite: 10].</p>
+
+        <h3>Right to Object to Data Collection in Special Cases and to Direct Marketing (Art. 21 GDPR)</h3>
+        <p>IF DATA PROCESSING IS BASED ON ART. 6 ABS. 1 LIT. E OR F GDPR, YOU HAVE THE RIGHT AT ANY TIME, FOR REASONS ARISING FROM YOUR PARTICULAR SITUATION, TO OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA; THIS ALSO APPLIES TO PROFILING BASED ON THESE PROVISIONS[cite: 10]. THE RESPECTIVE LEGAL BASIS ON WHICH PROCESSING IS BASED CAN BE FOUND IN THIS PRIVACY POLICY[cite: 10]. IF YOU OBJECT, WE WILL NO LONGER PROCESS YOUR AFFECTED PERSONAL DATA UNLESS WE CAN DEMONSTRATE COMPELLING LEGITIMATE GROUNDS FOR PROCESSING WHICH OVERRIDE YOUR INTERESTS, RIGHTS, AND FREEDOMS, OR THE PROCESSING SERVES THE ESTABLISHMENT, EXERCISE, OR DEFENSE OF LEGAL CLAIMS (OBJECTION ACCORDING TO ART. 21 ABS. 1 GDPR)[cite: 10].</p>
+        <p>IF YOUR PERSONAL DATA IS PROCESSED FOR THE PURPOSE OF DIRECT MARKETING, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME TO THE PROCESSING OF PERSONAL DATA CONCERNING YOU FOR THE PURPOSE OF SUCH MARKETING; THIS ALSO APPLIES TO PROFILING INSOFAR AS IT IS CONNECTED WITH SUCH DIRECT MARKETING[cite: 10]. IF YOU OBJECT, YOUR PERSONAL DATA WILL SUBSEQUENTLY NO LONGER BE USED FOR THE PURPOSE OF DIRECT MARKETING (OBJECTION ACCORDING TO ART. 21 ABS. 2 GDPR)[cite: 10].</p>
+
+        <h3>Right to Lodge a Complaint with the Competent Supervisory Authority</h3>
+        <p>In the event of violations of the GDPR, data subjects have a right to lodge a complaint with a supervisory authority, in particular in the Member State of their habitual residence, their place of work, or the place of the alleged violation[cite: 10]. The right to lodge a complaint is without prejudice to any other administrative or judicial remedies[cite: 10].</p>
+
+        <h3>Right to Data Portability</h3>
+        <p>You have the right to have data that we process automatically on the basis of your consent or in fulfillment of a contract handed over to you or to a third party in a common, machine-readable format[cite: 10]. If you request the direct transfer of data to another responsible party, this will only be done insofar as it is technically feasible[cite: 10].</p>
+
+        <h3>Information, Correction, and Deletion</h3>
+        <p>Within the framework of the applicable statutory provisions, you have the right at any time to free information about your stored personal data, its origin and recipient, and the purpose of data processing and, if applicable, a right to correction or deletion of this data[cite: 10]. You can contact us at any time regarding this and other questions on the subject of personal data[cite: 10].</p>
+
+        <h3>Right to Restriction of Processing</h3>
+        <p>You have the right to request the restriction of processing of your personal data[cite: 10]. You can contact us at any time regarding this[cite: 10]. The right to restriction of processing exists in the following cases:</p>
+        <ul>
+          <li>If you dispute the accuracy of your personal data stored with us, we usually need time to verify this[cite: 10]. For the duration of the audit, you have the right to request the restriction of the processing of your personal data[cite: 10].</li>
+          <li>If the processing of your personal data happened/happens unlawfully, you can request the restriction of data processing instead of deletion[cite: 10].</li>
+          <li>If we no longer need your personal data, but you need it to exercise, defend, or assert legal claims, you have the right to request the restriction of processing of your personal data instead of deletion[cite: 10].</li>
+          <li>If you have lodged an objection pursuant to Art. 21 Abs. 1 GDPR, a balance must be struck between your interests and ours[cite: 10]. As long as it is not yet clear whose interests prevail, you have the right to request the restriction of the processing of your personal data[cite: 10].</li>
+        </ul>
+        <p>If you have restricted the processing of your personal data, this data – apart from its storage – may only be processed with your consent or for the establishment, exercise, or defense of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the European Union or a Member State[cite: 10].</p>
+
+        <h3>SSL or TLS Encryption</h3>
+        <p>This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content, such as orders or inquiries that you send to us as the site operator[cite: 10]. You can recognize an encrypted connection by the fact that the address line of the browser changes from "http://" to "https://" and by the lock symbol in your browser line[cite: 10].</p>
+        <p>If SSL or TLS encryption is activated, the data you transmit to us cannot be read by third parties[cite: 10].</p>
+
+        <h2>4. Data Collection on This Website</h2>
+        <h3>Cookies</h3>
+        <p>Our internet pages use so-called "cookies"[cite: 10]. Cookies are small data packets and do not cause any damage to your terminal device[cite: 10]. They are stored either temporarily for the duration of a session (session cookies) or permanently (permanent cookies) on your terminal device[cite: 10]. Session cookies are automatically deleted at the end of your visit[cite: 10]. Permanent cookies remain stored on your terminal device until you delete them yourself or an automatic deletion is carried out by your web browser[cite: 10].</p>
+        <p>Cookies can come from us (first-party cookies) or from third-party companies (so-called third-party cookies)[cite: 10]. Third-party cookies enable the integration of certain services from third-party companies within websites (e.g., cookies for processing payment services)[cite: 10].</p>
+        <p>Cookies have various functions[cite: 10]. Numerous cookies are technically necessary, as certain website functions would not work without them (e.g., the shopping cart function or the display of videos)[cite: 10]. Other cookies can be used to evaluate user behavior or for advertising purposes[cite: 10].</p>
+        <p>Cookies that are required to carry out the electronic communication process, to provide certain functions desired by you (e.g., for the shopping cart function) or to optimize the website (e.g., cookies to measure the web audience) (necessary cookies) are stored on the basis of Art. 6 Abs. 1 lit. f GDPR unless another legal basis is specified[cite: 10]. The website operator has a legitimate interest in storing necessary cookies for the technically error-free and optimized provision of their services[cite: 10]. If consent to the storage of cookies and comparable recognition technologies has been requested, processing takes place exclusively on the basis of this consent (Art. 6 Abs. 1 lit. a GDPR and § 25 Abs. 1 TDDDG); the consent can be revoked at any time[cite: 10].</p>
+        <p>You can set your browser so that you are informed about the setting of cookies and allow cookies only in individual cases, exclude the acceptance of cookies for certain cases or in general, and activate the automatic deletion of cookies when closing the browser[cite: 10]. If cookies are deactivated, the functionality of this website may be limited[cite: 10].</p>
+
+        <h3>Contact Form</h3>
+        <p>If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in the case of follow-up questions[cite: 10]. We do not pass on this data without your consent[cite: 10].</p>
+        <p>The processing of this data is based on Art. 6 Abs. 1 lit. b GDPR if your inquiry is related to the fulfillment of a contract or is necessary to carry out pre-contractual measures[cite: 10]. In all other cases, processing is based on our legitimate interest in the effective processing of inquiries addressed to us (Art. 6 Abs. 1 lit. f GDPR) or on your consent (Art. 6 Abs. 1 lit. a GDPR) if this was requested; the consent can be revoked at any time[cite: 10].</p>
+        <p>The data you enter into the contact form will remain with us until you request us to delete it, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after your inquiry has been processed)[cite: 10]. Mandatory statutory provisions – in particular retention periods – remain unaffected[cite: 10].</p>
+
+        <h3>Inquiry by Email, Phone, or Fax</h3>
+        <p>If you contact us by email, phone, or fax, your inquiry, including all personal data resulting from it (name, inquiry), will be stored and processed by us for the purpose of processing your request[cite: 10]. We do not pass on this data without your consent[cite: 10].</p>
+        <p>The processing of this data is based on Art. 6 Abs. 1 lit. b GDPR if your inquiry is related to the fulfillment of a contract or is necessary to carry out pre-contractual measures[cite: 10]. In all other cases, processing is based on our legitimate interest in the effective processing of inquiries addressed to us (Art. 6 Abs. 1 lit. f GDPR) or on your consent (Art. 6 Abs. 1 lit. a GDPR) if this was requested; the consent can be revoked at any time[cite: 10].</p>
+        <p>The data you send to us via contact inquiries will remain with us until you request us to delete it, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after your request has been processed)[cite: 10]. Mandatory statutory provisions – in particular statutory retention periods – remain unaffected[cite: 10].</p>
+
+        <h2>5. Plugins and Tools</h2>
+        <h3>Google Fonts (Local Hosting)</h3>
+        <p>This site uses so-called Google Fonts, provided by Google, for the uniform display of fonts[cite: 10]. The Google Fonts are installed locally[cite: 10]. A connection to Google servers does not take place[cite: 10].</p>
+        <p>Further information about Google Fonts can be found at <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a> and in Google's privacy policy: <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=en</a>[cite: 10].</p>
+      </Fragment>
+    )}
+
+    <!-- Spanish Privacy Policy Block -->
+    {lang === 'es' && (
+      <Fragment>
+        <h1>Política de Privacidad</h1>
+
+        <h2>1. Protección de datos de un vistazo</h2>
+        <h3>Indicaciones generales</h3>
+        <p>Las siguientes indicaciones proporcionan una visión general sencilla de lo que ocurre con sus datos personales cuando visita este sitio web[cite: 12]. Los datos personales son todos aquellos datos con los que se le puede identificar personalmente[cite: 12]. Para obtener información detallada sobre el tema de la protección de datos, consulte nuestra política de privacidad que figura bajo este texto[cite: 12].</p>
+
+        <h3>Recopilación de datos on este sitio web</h3>
+        <h4>¿Quién es el responsable de la recopilación de datos en este sitio web?</h4>
+        <p>El procesamiento de datos en este sitio web es realizado por el operador del sitio web[cite: 12]. Puede encontrar sus datos de contacto en la sección "Indicación sobre el responsable del tratamiento" de esta política de privacidad[cite: 12].</p>
+
+        <h4>¿Cómo recopilamos sus datos?</h4>
+        <p>Por un lado, sus datos se recopilan cuando usted nos los comunica[cite: 12]. Por ejemplo, puede tratarse de datos que introduce en un formulario de contacto[cite: 12].</p>
+        <p>Otros datos son recopilados de forma automática o tras su consentimiento por nuestros sistemas informáticos cuando visita el sitio web[cite: 12]. Se trata principalmente de datos técnicos (por ejemplo, el navegador de internet, el sistema operativo o la hora de la visita a la página)[cite: 12]. La recopilación de estos datos se realiza de forma automática en cuanto entra en este sitio web[cite: 12].</p>
+
+        <h4>¿Para qué utilizamos sus datos?</h4>
+        <p>Una parte de los datos se recopila para garantizar una prestación sin errores del sitio web[cite: 12]. Otros datos pueden utilizarse para analizar su comportamiento como usuario[cite: 12]. En la medida en que se puedan celebrar o iniciar contratos a través del sitio web, los datos transmitidos también se procesarán para ofertas contractuales, pedidos u otras solicitudes de proyectos[cite: 12].</p>
+
+        <h4>¿Qué derechos tiene respecto a sus datos?</h4>
+        <p>Tiene derecho a recibir en cualquier momento y de forma gratuita información sobre el origen, el destinatario y la finalidad de sus datos personales almacenados[cite: 12]. También tiene derecho a solicitar la rectificación o eliminación de estos datos[cite: 12]. Si ha otorgado su consentimiento para el procesamiento de datos, puede revocarlo en cualquier momento para el futuro[cite: 12]. Asimismo, tiene derecho, bajo ciertas circunstancias, a solicitar la limitación del procesamiento de sus datos personales[cite: 12]. Además, le asiste el derecho de presentar una reclamación ante la autoridad de control competente[cite: 12].</p>
+        <p>Para ello, así como para cualquier otra pregunta sobre el tema de la protección de datos, puede ponerse en contacto con nosotros en cualquier momento[cite: 12].</p>
+
+        <h2>2. Alojamiento (Hosting)</h2>
+        <p>Alojamos los contenidos de nuestro sitio web con el siguiente proveedor:</p>
+        <h3>Alojamiento Externo</h3>
+        <p>Este sitio web se aloja externamente[cite: 12]. Los datos personales que se recopilan en este sitio web se almacenan en los servidores del proveedor de alojamiento (hoster)[cite: 12]. Esto puede incluir, principalmente, direcciones IP, solicitudes de contacto, datos de metadatos y comunicaciones, datos contractuales, datos de contacto, nombres, accesos al sitio web y otros datos generados a través de un sitio web[cite: 12].</p>
+        <p>El alojamiento externo se realiza con el fin de cumplir con el contrato frente a nuestros clientes potenciales y existentes (Art. 6, apdo. 1, letra b del RGPD) y en el interés de una prestación segura, rápida y eficiente de nuestra oferta en línea por parte de un proveedor profesional (Art. 6, apdo. 1, letra f del RGPD)[cite: 12]. Si se ha solicitado el consentimiento correspondiente, el procesamiento se realiza exclusivamente sobre la base del Art. 6, apdo. 1, letra a del RGPD y el § 25, apdo. 1 de la TDDDG, en la medida en que el consentimiento incluya el almacenamiento de cookies o el acceso a información en el dispositivo terminal del usuario (por ejemplo, huella digital del dispositivo) en el sentido de la TDDDG[cite: 12]. El consentimiento se puede revocar en cualquier momento[cite: 12].</p>
+        <p>Nuestro proveedor de alojamiento procesará sus datos solo en la medida en que sea necesario para cumplir con sus obligaciones de servicio y seguirá nuestras instrucciones respecto a dichos datos[cite: 12].</p>
+        <p>Utilizamos el siguiente proveedor de alojamiento:<br />
+        <strong>Netlify - 512 2nd Street, Suite 200, San Francisco, CA 94107, EE. UU.</strong>[cite: 12]</p>
+        <h3>Encargo de Tratamiento (DPA)</h3>
+        <p>Hemos celebrado un contrato de encargo de tratamiento (DPA) para el uso del servicio mencionado anteriormente[cite: 12]. Se trata de un contrato exigido por la legislación de protección de datos que garantiza que este proveedor procesa los datos personales de los visitantes de nuestro sitio web únicamente de acuerdo con nuestras instrucciones y en cumplimiento del RGPD[cite: 12].</p>
+
+        <h2>3. Indicaciones generales e informaciones obligatorias</h2>
+        <h3>Protección de datos</h3>
+        <p>Los operadores de estas páginas se toman muy en serio la protección de sus datos personales[cite: 12]. Tratamos sus datos personales de forma confidencial y de acuerdo con las disposiciones legales de protección de datos, así como con esta política de privacidad[cite: 12].</p>
+        <p>Cuando utiliza este sitio web, se recopilan varios datos personales[cite: 12]. Los datos personales son datos con los que se le puede identificar personalmente[cite: 12]. Esta política de privacidad explica qué datos recopilamos y para qué los utilizamos[cite: 12]. También explica cómo y con qué finalidad se lleva a cabo[cite: 12].</p>
+        <p>Advertimos que la transmisión de datos en internet (por ejemplo, en la comunicación por correo electrónico) puede presentar brechas de seguridad[cite: 12]. No es posible garantizar una protección total de los datos contra el acceso de terceros[cite: 12].</p>
+
+        <h3>Indicación sobre el responsable del tratamiento</h3>
+        <p>El responsable del procesamiento de datos en este sitio web es:<br />
+        <strong>Dante Joaquin Pino Suarez</strong><br />
+        Ufnaustraße 16<br />
+        10553 Berlín<br />
+        Teléfono: 016096579389<br />
+        Correo electrónico: pinosuarezjoaquin@gmail.com[cite: 12]</p>
+        <p>El responsable es la persona física o jurídica que, sola o conjuntamente con otras, decide sobre los fines y los medios del procesamiento de datos personales (por ejemplo, nombres, direcciones de correo electrónico, etc.)[cite: 12].</p>
+
+        <h3>Plazo de almacenamiento</h3>
+        <p>A menos que se especifique un plazo de almacenamiento más específico dentro de esta política de privacidad, sus datos personales permanecerán con nosotros hasta que deje de aplicarse la finalidad del procesamiento de los datos[cite: 12]. Si presenta una solicitud legítima de eliminación o revoca su consentimiento para el procesamiento de datos, sus datos serán eliminados, a menos que tengamos otros motivos legalmente permisibles para almacenar sus datos personales (por ejemplo, plazos de retención fiscales o comerciales); en este último caso, la eliminación se realizará una vez que dejen de aplicarse dichos motivos[cite: 12].</p>
+
+        <h3>Indicaciones generales sobre las bases legales del procesamiento de datos en este sitio web</h3>
+        <p>Si ha dado su consentimiento para el procesamiento de datos, procesamos sus datos personales sobre la base del Art. 6, apdo. 1, letra a del RGPD o del Art. 9, apdo. 2, letra a del RGPD si se procesan categorías especiales de datos según el Art. 9, apdo. 1 del RGPD[cite: 12]. En caso de consentimiento expreso para la transferencia de datos personales a terceros países, el procesamiento de datos también se basa en el Art. 49, apdo. 1, letra a del RGPD[cite: 12]. Si ha consentido el almacenamiento de cookies o el acceso a información en su dispositivo terminal (por ejemplo, a través de la huella digital del dispositivo), el procesamiento de datos se basa adicionalmente en el § 25, apdo. 1 de la TDDDG[cite: 12]. El consentimiento se puede revocar en cualquier momento[cite: 12]. Si sus datos son necesarios para la ejecución del contrato o para la realización de medidas precontractuales, procesamos sus datos sobre la base del Art. 6, apdo. 1, letra b del RGPD[cite: 12]. Además, procesamos sus datos si es necesario para cumplir con una obligación legal sobre la base del Art. 6, apdo. 1, letra c del RGPD[cite: 12]. El procesamiento de datos también puede llevarse a cabo sobre la base de nuestro interés legítimo según el Art. 6, apdo. 1, letra f del RGPD[cite: 12]. En los siguientes párrafos de esta política de privacidad se informa sobre las bases legales aplicables en cada caso concreto[cite: 12].</p>
+
+        <h3>Destinatarios de datos personales</h3>
+        <p>En el marco de nuestras actividades comerciales, colaboramos con diversas entidades externas[cite: 12]. En algunos casos, también es necesaria la transmisión de datos personales a estas entidades externas[cite: 12]. Solo transmitimos datos personales a entidades externas si es necesario en el marco del cumplimiento de un contrato, si estamos legalmente obligados a ello (por ejemplo, transmisión de datos a las autoridades fiscales), si tenemos un interés legítimo según el Art. 6, apdo. 1, letra f del RGPD en la transmisión o si otra base legal permite la transferencia de datos[cite: 12]. Cuando utilizamos encargados del tratamiento, solo transmitimos datos personales de nuestros clientes sobre la base de un contrato válido de encargo de tratamiento[cite: 12]. En caso de procesamiento conjunto, se celebra un contrato de procesamiento conjunto[cite: 12].</p>
+
+        <h3>Revocación de su consentimiento para el procesamiento de datos</h3>
+        <p>Muchos procesos de tratamiento de datos solo son posibles con su consentimiento expreso[cite: 12]. Puede revocar un consentimiento ya otorgado en cualquier momento[cite: 12]. La legalidad del procesamiento de datos realizado hasta la revocación no se verá afectada por esta[cite: 12].</p>
+
+        <h3>Derecho de oposición a la recopilación de datos en casos especiales, así como contra la publicidad directa (Art. 21 del RGPD)</h3>
+        <p>SI EL PROCESAMIENTO DE DATOS SE BASA EN EL ART. 6, APDO. 1, LETRAS E O F DEL RGPD, TIENE DERECHO EN CUALQUIER MOMENTO, POR RAZONES DERIVADAS DE SU SITUACIÓN PARTICULAR, A OPONERSE AL PROCESAMIENTO DE SUS DATOS PERSONALES; ESTO TAMBIÉN SE APLICA A LA ELABORACIÓN DE PERFILES BASADA EN ESTAS DISPOSICIONES[cite: 12]. PUEDE CONSULTAR LA BASE LEGAL RESPECTIVA EN LA QUE SE BASA EL PROCESAMIENTO EN ESTA POLÍTICA DE PRIVACIDAD[cite: 12]. SI SE OPONE, DEJAREMOS DE PROCESAR SUS DATOS PERSONALES AFECTADOS, A MENOS QUE PODAMOS DEMOSTRAR MOTIVOS LEGÍTIMOS IMPERIOSOS PARA EL PROCESAMIENTO QUE PREVALEZCAN SOBRE SUS INTERESES, DERECHOS Y LIBERTADES, O QUE EL PROCESAMIENTO SIRVA PARA LA RECLAMACIÓN, EL EJERCICIO O LA DEFENSA DE RECLAMACIONES LEGALES (OPOSICIÓN SEGÚN EL ART. 21, APDO. 1 DEL RGPD)[cite: 12].</p>
+        <p>SI SUS DATOS PERSONALES SE PROCESAN PARA CONDUCIR PUBLICIDAD DIRECTA, TIENE DERECHO A OPONERSE EN CUALQUIER MOMENTO AL PROCESAMIENTO DE LOS DATOS PERSONALES QUE LE CONCIERNEN PARA DICHOS FINES PUBLICITARIOS; ESTO TAMBIÉN SE APLICA A LA ELABORACIÓN DE PERFILES EN LA MEDIDA EN QUE ESTÉ RELACIONADA CON DICHA PUBLICIDAD DIRECTA[cite: 12]. SI SE OPONE, SUS DATOS PERSONALES DEJARÁN DE UTILIZARSE POSTERIORMENTE PARA FINES DE PUBLICIDAD DIRECTA (OPOSICIÓN SEGÚN EL ART. 21, APDO. 2 DEL RGPD)[cite: 12].</p>
+
+        <h3>Derecho de reclamación ante la autoridad de control competente</h3>
+        <p>In caso de infracciones del RGPD, los afectados tienen derecho a presentar una reclamación ante una autoridad de control, en particular en el Estado miembro de su residencia habitual, lugar de trabajo o lugar de la presunta infracción[cite: 12]. El derecho de reclamación se entenderá sin perjuicio de cualquier otro recurso administrativo o judicial[cite: 12].</p>
+
+        <h3>Derecho a la portabilidad de los datos</h3>
+        <p>Tiene derecho a que los datos que procesamos de forma automatizada sobre la base de su consentimiento o en cumplimiento de un contrato se le entreguen a usted o a un tercero en un formato estructurado, de uso común y lectura mecánica[cite: 12]. Si solicita la transferencia directa de los datos a otro responsable, esto solo se realizará en la medida en que sea técnicamente viable[cite: 12].</p>
+
+        <h3>Información, rectificación y eliminación</h3>
+        <p>En el marco de las disposiciones legales vigentes, tiene derecho en cualquier momento a recibir información gratuita sobre sus datos personales almacenados, su origen y destinatario, y la finalidad del procesamiento de los datos y, en su caso, el derecho a la rectificación o eliminación de estos datos[cite: 12]. Para ello, así como para cualquier otra pregunta sobre el tema de los datos personales, puede ponerse en contacto con nosotros en cualquier momento[cite: 12].</p>
+
+        <h3>Derecho a la limitación del procesamiento</h3>
+        <p>Tiene derecho a solicitar la limitación del procesamiento de sus datos personales[cite: 12]. Para ello, puede ponerse en contacto con nosotros en cualquier momento[cite: 12]. El derecho a la limitación del procesamiento existe en los siguientes casos:</p>
+        <ul>
+          <li>Si impugna la exactitud de sus datos personales almacenados con nosotros, generalmente necesitamos tiempo para verificarlo[cite: 12]. Durante el tiempo que dure la comprobación, tiene derecho a solicitar la limitación del procesamiento de sus datos personales[cite: 12].</li>
+          <li>Si el procesamiento de sus datos personales fue o es ilícito, puede solicitar la limitación del procesamiento de datos en lugar de la eliminación[cite: 12].</li>
+          <li>Si ya no necesitamos sus datos personales, pero usted los necesita para el ejercicio, la defensa o la reclamación de acciones legales, tiene derecho a solicitar la limitación del procesamiento de sus datos personales en lugar de la eliminación[cite: 12].</li>
+          <li>Si ha presentado una objeción de conformidad con el Art. 21, apdo. 1 del RGPD, debe realizarse una ponderación entre sus intereses y los nuestros[cite: 12]. Mientras no esté claro qué intereses prevalecen, tiene derecho a solicitar la limitación del procesamiento de sus datos personales[cite: 12].</li>
+        </ul>
+        <p>Si ha limitado el procesamiento de sus datos personales, estos datos (aparte de su almacenamiento) solo podrán procesarse con su consentimiento o para la reclamación, el ejercicio o la defensa de reclamaciones legales o para la protección de los derechos de otra persona física o jurídica o por razones de un interés público importante de la Unión Europea o de un Estado miembro[cite: 12].</p>
+
+        <h3>Cifrado SSL o TLS</h3>
+        <p>Este sitio web utiliza el cifrado SSL o TLS por razones de seguridad y para proteger la transmisión de contenidos confidenciales, como por ejemplo los pedidos o las consultas que nos envía como operador del sitio[cite: 12]. Puede reconocer una conexión cifrada porque la barra de direcciones del navegador cambia de "http://" a "https://" y por el símbolo del candado en la barra del navegador[cite: 12].</p>
+        <p>Si el cifrado SSL o TLS está activado, los datos que nos transmita no podrán ser leídos por terceros[cite: 12].</p>
+
+        <h2>4. Recopilación de datos en este sitio web</h2>
+        <h3>Cookies</h3>
+        <p>Nuestras páginas de internet utilizan las llamadas "cookies"[cite: 12]. Las cookies son pequeños paquetes de datos y no causan ningún daño a su dispositivo terminal[cite: 12]. Se almacenan de forma temporal durante la duración de una sesión (cookies de sesión) o de forma permanente (cookies permanentes) en su dispositivo terminal[cite: 12]. Las cookies de sesión se eliminan automáticamente al finalizar su visita[cite: 12]. Las cookies permanentes quedan almacenadas en su dispositivo terminal hasta que las elimine usted mismo o su navegador web realice una eliminación automática[cite: 12].</p>
+        <p>Las cookies pueden proceder de nosotros (cookies de primera parte) o de terceras empresas (las llamadas cookies de terceros)[cite: 12]. Las cookies de terceros permiten la integración de ciertos servicios de terceras empresas dentro de las páginas web (por ejemplo, cookies para el procesamiento de servicios de pago)[cite: 12].</p>
+        <p>Las cookies tienen diferentes funciones[cite: 12]. Numerosas cookies son técnicamente necesarias, ya que ciertas funciones del sitio web no funcionarían sin ellas (por ejemplo, la función del carrito de compras o la visualización de videos)[cite: 12]. Otras cookies pueden utilizarse para evaluar el comportamiento del usuario o para fines publicitarios[cite: 12].</p>
+        <p>Las cookies que son necesarias para llevar a cabo el proceso de comunicación electrónica, para proporcionar ciertas funciones deseadas por usted (por ejemplo, para la función del carrito de compras) o para optimizar el sitio web (por ejemplo, cookies para medir la audiencia web) (cookies necesarias) se almacenan sobre la base del Art. 6, apdo. 1, letra f del RGPD, a menos que se especifique otra base legal[cite: 12]. El operador del sitio web tiene un interés legítimo en el almacenamiento de cookies necesarias para la prestación de sus servicios de forma técnicamente correcta y optimizada[cite: 12]. Si se ha solicitado un consentimiento para el almacenamiento de cookies y tecnologías de reconocimiento comparables, el procesamiento se realiza exclusivamente sobre la base de este consentimiento (Art. 6, apdo. 1, letra a del RGPD y § 25, apdo. 1 de la TDDDG); el consentimiento es revocable en cualquier momento[cite: 12].</p>
+        <p>Puede configurar su navegador de manera que se le informe sobre la colocación de cookies y permitir cookies solo en casos individuales, excluir la aceptación de cookies para casos determinados o en general, y activar la eliminación automática de cookies al cerrar el navegador[cite: 12]. Si se desactivan las cookies, la funcionalidad de este sitio web puede verse limitada[cite: 12].</p>
+
+        <h3>Formulario de contacto</h3>
+        <p>Si nos hace llegar consultas a través del formulario de contacto, sus datos del formulario de consulta, incluidos los datos de contacto que haya facilitado allí, serán almacenados por nosotros con el fin de procesar la consulta y en caso de preguntas de seguimiento[cite: 12]. No facilitaremos estos datos sin su consentimiento[cite: 12].</p>
+        <p>El procesamiento de estos datos se realiza sobre la base del Art. 6, apdo. 1, letra b del RGPD, si su consulta está relacionada con el cumplimiento de un contrato o es necesaria para la ejecución de medidas precontractuales[cite: 12]. In todos los demás casos, el procesamiento se basa en nuestro interés legítimo en el procesamiento efectivo de las consultas que se nos dirigen (Art. 6, apdo. 1, letra f del RGPD) o en su consentimiento (Art. 6, apdo. 1, letra a del RGPD) si este fue solicitado; el consentimiento es revocable en cualquier momento[cite: 12].</p>
+        <p>Los datos que introduzca en el formulario de contacto permanecerán con nosotros hasta que nos solicite su eliminación, revoque su consentimiento para el almacenamiento o desaparezca la finalidad del almacenamiento de los datos (por ejemplo, después de que se haya procesado su consulta)[cite: 12]. Las disposiciones legales imperativas (en particular, los plazos de retención) no se verán afectadas[cite: 12].</p>
+
+        <h3>Consulta por correo electrónico, teléfono o fax</h3>
+        <p>Si se pone en contacto con nosotros por correo electrónico, teléfono o fax, su consulta, incluidos todos los datos personales resultantes de ella (nombre, consulta), será almacenada y procesada por nosotros con el fin de tramitar su solicitud[cite: 12]. No facilitaremos estos datos sin su consentimiento[cite: 12].</p>
+        <p>El procesamiento de estos datos se realiza sobre la base del Art. 6, apdo. 1, letra b del RGPD, si su consulta está relacionada con el cumplimiento de un contrato o es necesaria para la ejecución de medidas precontractuales[cite: 12]. In todos los demás casos, el procesamiento se basa en nuestro interés legítimo en el procesamiento efectivo de las consultas que se nos dirigen (Art. 6, apdo. 1, letra f del RGPD) o en su consentimiento (Art. 6, apdo. 1, letra a del RGPD) si este fue solicitado; el consentimiento es revocable en cualquier momento[cite: 12].</p>
+        <p>Los datos que nos envíe a través de consultas de contacto permanecerán con nosotros hasta que nos solicite su eliminación, revoque su consentimiento para el almacenamiento o desaparezca la finalidad del almacenamiento de los datos (por ejemplo, después de que se haya tramitado su solicitud)[cite: 12]. Las disposiciones legales imperativas (en particular, los plazos legales de retención) no se verán afectadas[cite: 12].</p>
+
+        <h2>5. Plugins y Herramientas</h2>
+        <h3>Google Fonts (alojamiento local)</h3>
+        <p>Esta página utiliza las llamadas Google Fonts, proporcionadas por Google, para la representación uniforme de las fuentes[cite: 12]. Las Google Fonts están instaladas localmente[cite: 12]. No se realiza ninguna conexión con los servidores de Google[cite: 12].</p>
+        <p>Puede encontrar más información sobre Google Fonts en <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a> y en la política de privacidad de Google: <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=es</a>[cite: 12].</p>
+      </Fragment>
+    )}
+
   </main>
 </Layout>
