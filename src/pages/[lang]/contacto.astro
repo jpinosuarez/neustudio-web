@@ -84,6 +84,7 @@ const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
         <input type="hidden" name="pain_point" id="field-pain-point" value="" />
         <input type="hidden" name="budget" id="field-budget" value="" />
         <input type="hidden" name="timeline" id="field-timeline" value="" />
+        <input type="hidden" name="selected_plan" id="field-selected-plan" value="none" />
 
         <!-- ===== STEP 1: QUALIFICATION ===== -->
         <fieldset data-step="1" aria-hidden="false" class="space-y-4">
@@ -277,8 +278,13 @@ const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
 
 <script>
   (function () {
-    // ─── Query param detection for success state ───
+    // ─── Query param detection for plan intent & success state ───
     const urlParams = new URLSearchParams(window.location.search);
+    const planValue = urlParams.get('plan');
+    const fieldPlan = document.getElementById('field-selected-plan') as HTMLInputElement | null;
+    if (planValue && fieldPlan) {
+      fieldPlan.value = planValue;
+    }
     if (urlParams.get('success') === 'true') {
       document.getElementById('success-state')?.classList.remove('hidden');
       document.getElementById('form-state')?.classList.add('hidden');

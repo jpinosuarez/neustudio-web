@@ -18,6 +18,7 @@ const tiers = [
       t('pricing.tier1Feature4'),
     ],
     cta: t('pricing.tier1Cta'),
+    href: `/${lang}/contacto?plan=propietario`,
     variant: 'primary' as const,
   },
   {
@@ -32,6 +33,7 @@ const tiers = [
       t('pricing.tier2Feature4'),
     ],
     cta: t('pricing.tier2Cta'),
+    href: `/${lang}/contacto?plan=waas`,
     variant: 'accent' as const,
   },
 ];
@@ -91,7 +93,7 @@ const tiers = [
             ))}
           </ul>
 
-          <Button variant={tier.variant === 'accent' ? 'accent' : 'primary'} class="mt-8 w-full">
+          <Button variant={tier.variant === 'accent' ? 'accent' : 'primary'} href={tier.href} class="mt-8 w-full">
             {tier.cta}
           </Button>
         </article>
