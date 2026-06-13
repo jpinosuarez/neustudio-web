@@ -1,0 +1,12 @@
+# NeuStudio — Netlify Configuration
+# Form success redirect: after Netlify processes the contact form submission,
+# it redirects to /contacto?success=true, where the client-side JS shows the success state.
+
+[[redirects]]
+  from = "/contacto"
+  to = "/contacto"
+  status = 200
+
+[build]
+  command = "npm run build"
+  publish = "dist"

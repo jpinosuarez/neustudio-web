@@ -1,104 +1,14 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import { getCollection, getEntry, render } from 'astro:content';
-import { useTranslations } from '../../../i18n/utils';
-import Button from '../../../components/ui/Button.astro';
-import type { Language } from '../../../i18n/ui';
-import { defaultLanguage } from '../../../i18n/ui';
+// PORTFOLIO DEACTIVATED — 302 Redirect to homepage
+// Original content preserved in git history. See draft-contact-phase-plan.md.
 
-export async function getStaticPaths() {
-  const entries = await getCollection('portfolio');
-
-  return entries.map((entry) => {
-    // entry.id includes lang prefix (e.g. "de/berlin-kitchen-supply")
-    const slug = entry.id.replace(/^[a-z]{2}\//, '');
-    return {
-      params: {
-        lang: entry.data.lang,
-        slug,
-      },
-    };
-  });
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es', slug: 'placeholder' } },
+    { params: { lang: 'en', slug: 'placeholder' } },
+    { params: { lang: 'de', slug: 'placeholder' } },
+  ];
 }
 
-const { lang, slug } = Astro.params as { lang: Language; slug: string };
-const t = useTranslations(lang);
-
-// Reconstruct the full id to query the correct entry
-const fullId = `${lang}/${slug}` as const;
-const entry = await getEntry('portfolio', fullId);
-
-if (!entry) {
-  return Astro.redirect(lang === defaultLanguage ? '/404' : `/${lang}/404`);
-}
-
-const contactPath = lang === defaultLanguage ? '/contacto' : `/${lang}/contacto`;
-const portfolioPath = lang === defaultLanguage ? '/portfolio' : `/${lang}/portfolio`;
-
-const { Content } = await render(entry);
+return Astro.redirect((Astro.params.lang === 'es' ? '/' : `/${Astro.params.lang}`), 302);
 ---
-
-<Layout
-  lang={lang}
-  title={`${entry.data.title} — ${t('pageTitles.portfolio')}`}
-  description={entry.data.seoDescription ?? entry.data.shortDescription}
->
-  <article class="mx-auto max-w-4xl px-4 py-16">
-    <a
-      href={portfolioPath}
-      class="mb-8 inline-flex items-center gap-2 text-sm font-medium text-neu-muted transition-colors hover:text-neu-brand"
-    >
-      ← {t('pageTitles.portfolio')}
-    </a>
-
-    <header class="mb-12">
-      <span class="inline-block rounded-xl bg-neu-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-neu-brand">
-        {entry.data.category}
-      </span>
-
-      <h1 class="mt-4 font-display text-3xl font-bold tracking-tight text-neu-dark md:text-4xl">
-        {entry.data.title}
-      </h1>
-
-      <p class="mt-2 text-lg text-neu-muted">{entry.data.client}</p>
-
-      {entry.data.metrics && entry.data.metrics.length > 0 && (
-        <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {entry.data.metrics.map((metric) => (
-            <div class="rounded-3xl border border-neu-dark/5 bg-neu-light p-5 text-center">
-              <p class="text-3xl font-bold text-neu-brand">{metric.value}</p>
-              <p class="mt-1 text-sm font-semibold text-neu-dark">{metric.label}</p>
-              <p class="mt-1 text-xs text-neu-muted">{metric.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
-    </header>
-
-    {entry.data.image && (
-      <div class="mb-12 overflow-hidden rounded-3xl">
-        <img
-          src={entry.data.image.src}
-          alt={entry.data.imageAlt}
-          class="h-full w-full object-cover"
-        />
-      </div>
-    )}
-
-    <div class="prose prose-lg prose-gray max-w-none">
-      <Content />
-    </div>
-
-    <div class="mt-16 border-t border-neu-dark/5 pt-12 text-center">
-      <h2 class="font-display text-2xl font-bold tracking-tight text-neu-dark">
-        ¿Listo para resultados similares?
-      </h2>
-      <p class="mt-2 text-neu-muted">Hablemos de tu proyecto.</p>
-      <div class="mt-6">
-        <Button href={contactPath} variant="accent" size="lg">
-          {t('cta.proposal')}
-        </Button>
-      </div>
-    </div>
-  </article>
-</Layout>

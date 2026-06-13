@@ -21,17 +21,19 @@ const t = useTranslations(lang);
     </p>
     <div class="flex flex-col md:flex-row gap-4 mt-8">
       <a
-        href={`/${lang}/contact`}
+        href={lang === 'es' ? '/contacto' : `/${lang}/contacto`}
         class="inline-flex items-center justify-center rounded-xl px-8 py-3 bg-neu-accent text-white font-semibold shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-base md:text-lg min-w-[192px] min-h-[48px]"
       >
         {t('hero.primaryCta')}
       </a>
+      <!-- PORTFOLIO DEACTIVATED — see draft-contact-phase-plan.md
       <a
         href={`/${lang}/portfolio`}
         class="inline-flex items-center justify-center rounded-xl px-8 py-3 border border-neu-muted text-neu-muted font-semibold hover:bg-neu-light transition-colors text-base md:text-lg min-w-[192px] min-h-[48px]"
       >
         {t('hero.secondaryCta')}
       </a>
+      -->
     </div>
     <p class="mt-4 text-sm text-neu-muted/70">
       {t('hero.trustSignal')}
