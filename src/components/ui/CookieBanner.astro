@@ -1,0 +1,64 @@
+---
+---
+
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 w-full bg-neu-dark text-white z-50 p-4 md:p-6 shadow-2xl translate-y-full transition-transform duration-300"
+>
+  <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 md:flex-row">
+    <p class="text-sm text-white/80">
+      This website uses minimal cookies for essential functionality. No tracking or analytics cookies are set without your consent.
+    </p>
+    <div class="flex shrink-0 gap-3">
+      <button
+        id="consent-essential"
+        type="button"
+        class="rounded-xl bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20"
+      >
+        Essentials Only
+      </button>
+      <button
+        id="consent-all"
+        type="button"
+        class="rounded-xl bg-neu-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:brightness-110"
+      >
+        Accept All
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+
+    const consent = localStorage.getItem('neustudio_consent');
+
+    if (consent === null) {
+      banner.classList.remove('translate-y-full');
+    }
+
+    const acceptAll = document.getElementById('consent-all');
+    const acceptEssential = document.getElementById('consent-essential');
+
+    const hideBanner = () => {
+      banner.classList.add('translate-y-full');
+    };
+
+    if (acceptAll instanceof HTMLButtonElement) {
+      acceptAll.addEventListener('click', () => {
+        localStorage.setItem('neustudio_consent', 'all');
+        hideBanner();
+        window.dispatchEvent(new Event('consentGranted'));
+      });
+    }
+
+    if (acceptEssential instanceof HTMLButtonElement) {
+      acceptEssential.addEventListener('click', () => {
+        localStorage.setItem('neustudio_consent', 'essential');
+        hideBanner();
+      });
+    }
+  })();
+</script>

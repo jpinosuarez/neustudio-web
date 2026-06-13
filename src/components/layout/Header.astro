@@ -14,12 +14,13 @@ const t = useTranslations(lang);
 const { class: className } = Astro.props as Props;
 
 const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
-const localizedContactHref = lang === defaultLanguage ? '/contacto' : `/${lang}/contacto`;
+const localizedContactHref = `/${lang}/contacto`;
 // PORTFOLIO DEACTIVATED — see draft-contact-phase-plan.md
 // const localizedPortfolioHref = lang === defaultLanguage ? '/portfolio' : `/${lang}/portfolio`;
 
 const navItems = [
   { key: 'nav.services' as const, href: `${localizedRoot}#services` },
+  { key: 'nav.contact' as const, href: localizedContactHref },
   // PORTFOLIO DEACTIVATED — see draft-contact-phase-plan.md
   // { key: 'nav.portfolio' as const, href: localizedPortfolioHref },
 ] as const;
