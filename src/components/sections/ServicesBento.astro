@@ -8,41 +8,41 @@ const copyByLanguage = {
   es: {
     eyebrow: 'Nuestro Enfoque',
     heading: 'Webs que trabajan por ti, no al revés',
-    speedTitle: 'Velocidad que vende',
+    speedTitle: 'Velocidad que Vende',
     speedDescription:
-      'Arquitectura ligera, carga instantánea y una base técnica pensada para rendimiento real en móvil y desktop.',
-    waasTitle: 'Mantenimiento incluido',
+      'Tiempos de carga instantáneos diseñados para móvil. Convierte el tráfico local en clientes potenciales.',
+    waasTitle: 'Cero Dolores de Cabeza',
     waasDescription:
-      'Publicas, actualizas y escalas sin depender de tickets eternos ni costes ocultos cada mes.',
-    seoTitle: 'SEO y conversión integrados',
+      'Gestionamos hosting, seguridad y actualizaciones. Tú concéntrate en hacer crecer tu negocio.',
+    seoTitle: 'Construido para Google',
     seoDescription:
-      'Estructura clara, mensajes directos y señales de confianza que convierten visitas locales en consultas.',
+      'Estructura optimizada para que tus clientes en Berlín te encuentren antes que a tu competencia.',
   },
   en: {
     eyebrow: 'Our Approach',
     heading: 'Websites that work for you, not the other way around',
-    speedTitle: 'Speed that sells',
+    speedTitle: 'Speed that Sells',
     speedDescription:
-      'Lightweight architecture, instant loading, and a technical foundation built for real performance on mobile and desktop.',
-    waasTitle: 'Maintenance included',
+      'Instant load times designed for mobile. Turn local traffic into leads.',
+    waasTitle: 'Zero Headaches',
     waasDescription:
-      'Publish, update, and scale without endless tickets or hidden monthly costs.',
-    seoTitle: 'SEO and conversion built in',
+      'We handle hosting, security, and updates. You focus on running your business.',
+    seoTitle: 'Built for Google',
     seoDescription:
-      'Clear structure, direct messaging, and trust signals that turn local visits into enquiries.',
+      'Optimized structure so your clients in Berlin find you before your competition.',
   },
   de: {
     eyebrow: 'Unser Ansatz',
     heading: 'Websites, die für dich arbeiten, nicht umgekehrt',
     speedTitle: 'Geschwindigkeit, die verkauft',
     speedDescription:
-      'Leichte Architektur, sofortiges Laden und ein technisches Fundament für echte Performance auf Mobile und Desktop.',
-    waasTitle: 'Wartung inklusive',
+      'Sofortige Ladezeiten, optimiert für Mobilgeräte. Verwandle lokale Besucher in Anfragen.',
+    waasTitle: 'Null Kopfschmerzen',
     waasDescription:
-      'Veröffentlichen, aktualisieren und wachsen, ohne endlose Tickets oder versteckte monatliche Kosten.',
-    seoTitle: 'SEO und Conversion integriert',
+      'Wir kümmern uns um Hosting, Sicherheit und Updates. Du konzentrierst dich auf dein Geschäft.',
+    seoTitle: 'Optimiert für Google',
     seoDescription:
-      'Klare Struktur, direkte Botschaften und Vertrauenssignale, die lokale Besucher in Anfragen verwandeln.',
+      'Strukturierte Optimierung, damit dich Kunden in Berlin vor deiner Konkurrenz finden.',
   },
 } as const;
 
@@ -54,8 +54,8 @@ const readText = (key: string, fallback: string) => {
   return translated === key ? fallback : translated;
 };
 
-const sectionLabel = readText('services.eyebrow', defaults.eyebrow);
-const sectionHeading = readText('services.heading', defaults.heading);
+const sectionLabel = readText('services.badge', defaults.eyebrow);
+const sectionHeading = readText('services.title', defaults.heading);
 
 const services = [
   {
@@ -76,7 +76,7 @@ const services = [
 ];
 ---
 
-<section class="bg-neu-light py-24">
+<section id="servicios" class="bg-neu-light py-24">
   <div class="mx-auto max-w-7xl px-4 md:px-6">
     <div class="max-w-3xl">
       <div class="inline-flex min-h-12 items-center rounded-xl border border-neu-dark/5 bg-white px-4 text-sm font-semibold text-neu-muted">

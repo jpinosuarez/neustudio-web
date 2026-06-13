@@ -19,7 +19,7 @@ export const ui = {
       socialProof: '⭐⭐⭐⭐⭐ Confiado por negocios locales en Berlín',
       headline: 'Tu Web Lista en 7 Días. Más Rápido. Más Ventas.',
       subtitle:
-        'Sitios web optimizados para SEO que cargan en <0.5s y generan 3x más leads. Sin jerga técnica, solo resultados claros.',
+        'Atrae más clientes sin esperar. Webs ultrarrápidas que convierten visitas en reservas al instante.',
       primaryCta: 'Solicitar propuesta',
       secondaryCta: 'Explora Nuestros Casos de Éxito',
       trustSignal: 'Totalmente compatible con DSGVO/GDPR',
@@ -27,24 +27,47 @@ export const ui = {
     services: {
       badge: 'Nuestro Enfoque',
       title: 'Webs que trabajan por ti, no al revés.',
-      card1Title: 'Velocidad Extrema',
-      card1Desc: 'Infraestructura Serverless. Tu web cargará al instante, reteniendo a cada visitante y mejorando tu posicionamiento.',
-      card2Title: 'Mantenimiento Cero',
-      card2Desc: 'Olvídate de actualizar plugins o arreglar caídas del servidor. Nosotros nos encargamos de toda la parte técnica.',
-      card3Title: 'SEO Local Integrado',
-      card3Desc: 'Estructura optimizada desde el primer día para que los clientes de Berlín te encuentren en Google antes que a tu competencia.',
+      items: {
+        speed: {
+          title: 'Velocidad que Vende',
+          description:
+            'Tiempos de carga instantáneos diseñados para móvil. Convierte el tráfico local en clientes potenciales.',
+        },
+        waas: {
+          title: 'Cero Dolores de Cabeza',
+          description:
+            'Gestionamos hosting, seguridad y actualizaciones. Tú concéntrate en hacer crecer tu negocio.',
+        },
+        seo: {
+          title: 'Construido para Google',
+          description:
+            'Estructura optimizada para que tus clientes en Berlín te encuentren antes que a tu competencia.',
+        },
+      },
     },
     pricing: {
       badge: 'Planes Transparentes',
-      title: 'Cero costos de inicio. Todo incluido.',
-      planName: 'Suscripción WaaS',
-      price: '149€',
-      period: '/mes',
-      feature1: 'Diseño y desarrollo a medida',
-      feature2: 'Hosting ultrarrápido y dominio',
-      feature3: 'Mantenimiento y actualizaciones',
-      feature4: 'Soporte prioritario 24/7',
-      cta: 'Empezar ahora',
+      title: 'Elige tu modelo',
+      tier1Name: 'Propietario',
+      tier1Setup: '349€ setup',
+      tier1Price: '49€',
+      tier1Period: '/mes',
+      tier1Feature1: 'Diseño y desarrollo a medida',
+      tier1Feature2: 'Hosting Premium y SSL',
+      tier1Feature3: 'Cumplimiento DSGVO',
+      tier1Feature4: 'Soporte técnico y 1h/mes de actualizaciones',
+      tier1Cta: 'Solicitar propuesta',
+      tier2Name: 'Socio WaaS / Todo en Uno',
+      tier2Setup: '0€ setup',
+      tier2Price: '149€',
+      tier2Period: '/mes',
+      tier2Feature1: 'Todo lo del Plan Propietario',
+      tier2Feature2:
+        'Mantenimiento evolutivo (añade secciones/textos)',
+      tier2Feature3: 'Auditoría de Conversión Anual',
+      tier2Feature4:
+        'Infraestructura de Analítica y Tracking',
+      tier2Cta: 'Empezar ahora',
     },
     ctaBlock: {
       title: '¿Listo para escalar tu negocio en Berlín?',
@@ -65,10 +88,10 @@ export const ui = {
       stepLabel: 'Paso',
       stepOf: 'de',
       step1Title: '¿Cuál es tu mayor desafío ahora mismo?',
-      step1OptionSlow: 'Mi sitio es demasiado lento',
-      step1OptionSeo: 'Nadie me encuentra en Google',
-      step1OptionDesign: 'Necesito un diseño fresco',
-      step1OptionOther: 'Otro / No estoy seguro',
+      step1OptionSlow: 'Mi sitio actual es antiguo o demasiado lento',
+      step1OptionSeo: 'Necesito conseguir más clientes online',
+      step1OptionDesign: 'Empiezo desde cero y necesito una presencia profesional',
+      step1OptionOther: 'Otro (Explica abajo)',
       step1Next: 'Siguiente',
       step2Title: 'Ayúdanos a dimensionar tu proyecto',
       step2BudgetLabel: 'Presupuesto estimado',
@@ -104,6 +127,11 @@ export const ui = {
       privacy: 'Política de Privacidad',
       copyright: '© 2026 NeuStudio.',
     },
+    '404': {
+      title: 'Página no encontrada',
+      subtitle: 'Lo sentimos, la página que buscas no existe o ha sido movida.',
+      backHome: 'Volver al inicio',
+    },
   },
   en: {
     nav: {
@@ -121,26 +149,59 @@ export const ui = {
       socialProof: '⭐⭐⭐⭐⭐ Trusted by local businesses in Berlin',
       headline: 'Your Website in 7 Days. Faster. More Leads.',
       subtitle:
-        'SEO-optimized websites that load in <0.5s and generate 3x more leads. No tech jargon, just clear results.',
+        'Attract more clients without waiting. Ultra-fast websites that convert visits into bookings instantly.',
       primaryCta: 'Get Your Free Proposal',
       secondaryCta: 'Explore Our Success Stories',
       trustSignal: 'Fully DSGVO/GDPR Compliant',
     },
+    services: {
+      badge: 'Our Approach',
+      title: 'Websites that work for you, not the other way around.',
+      items: {
+        speed: {
+          title: 'Speed that Sells',
+          description:
+            'Instant load times designed for mobile. Turn local traffic into leads.',
+        },
+        waas: {
+          title: 'Zero Headaches',
+          description:
+            'We handle hosting, security, and updates. You focus on running your business.',
+        },
+        seo: {
+          title: 'Built for Google',
+          description:
+            'Optimized structure so your clients in Berlin find you before your competition.',
+        },
+      },
+    },
     pricing: {
       badge: 'Transparent Pricing',
-      title: 'Zero setup fees. Everything included.',
-      planName: 'WaaS Subscription',
-      price: '149€',
-      period: '/month',
-      feature1: 'Custom design and development',
-      feature2: 'Lightning-fast hosting & domain',
-      feature3: 'Maintenance and updates',
-      feature4: '24/7 priority support',
-      cta: 'Get started',
+      title: 'Choose your model',
+      tier1Name: 'Ownership',
+      tier1Setup: '349€ setup',
+      tier1Price: '49€',
+      tier1Period: '/month',
+      tier1Feature1: 'Design & Development',
+      tier1Feature2: 'Premium Hosting & SSL',
+      tier1Feature3: 'DSGVO Compliance',
+      tier1Feature4: 'Technical Support & 1hr/mo updates',
+      tier1Cta: 'Request proposal',
+      tier2Name: 'WaaS Partner / All-in-One',
+      tier2Setup: '0€ setup',
+      tier2Price: '149€',
+      tier2Period: '/month',
+      tier2Feature1: 'Everything in Ownership Plan',
+      tier2Feature2:
+        'Evolutionary maintenance (add sections/text)',
+      tier2Feature3: 'Annual Conversion Audit',
+      tier2Feature4:
+        'Analytics & Tracking infrastructure',
+      tier2Cta: 'Get started',
     },
     ctaBlock: {
       title: 'Ready to scale your business in Berlin?',
-      subtitle: 'Let’s talk about your project. No strings attached, just results.',
+      subtitle: 'Let\'s talk about your project. No strings attached, just results.',
       button: 'Book a free call',
     },
     portfolio: {
@@ -157,10 +218,10 @@ export const ui = {
       stepLabel: 'Step',
       stepOf: 'of',
       step1Title: 'What\'s your biggest challenge right now?',
-      step1OptionSlow: 'My site is too slow',
-      step1OptionSeo: 'Nobody finds me on Google',
-      step1OptionDesign: 'I need a fresh design',
-      step1OptionOther: 'Other / Not sure yet',
+      step1OptionSlow: 'My current site is old or too slow',
+      step1OptionSeo: 'I need to get more clients online',
+      step1OptionDesign: 'I\'m starting from scratch & need a pro presence',
+      step1OptionOther: 'Other (Explain below)',
       step1Next: 'Next',
       step2Title: 'Help us scope your project',
       step2BudgetLabel: 'Estimated budget',
@@ -196,6 +257,11 @@ export const ui = {
       privacy: 'Privacy Policy',
       copyright: '© 2026 NeuStudio.',
     },
+    '404': {
+      title: 'Page Not Found',
+      subtitle: 'Sorry, the page you are looking for does not exist or has been moved.',
+      backHome: 'Back to Home',
+    },
   },
   de: {
     nav: {
@@ -213,22 +279,55 @@ export const ui = {
       socialProof: '⭐⭐⭐⭐⭐ Von lokalen Unternehmen in Berlin geschätzt',
       headline: 'Deine Website in 7 Tagen. Schneller. Mehr Umsatz.',
       subtitle:
-        'SEO-optimierte Websites, die in <0.5s laden und 3x mehr Leads generieren. Kein Tech-Jargon, nur klare Ergebnisse.',
+        'Mehr Kunden gewinnen, ohne zu warten. Ultraschnelle Websites, die Besuche sofort in Buchungen verwandeln.',
       primaryCta: 'Kostenloses Angebot anfordern',
       secondaryCta: 'Unsere Erfolgsgeschichten ansehen',
       trustSignal: 'Vollständig DSGVO/GDPR-konform',
     },
+    services: {
+      badge: 'Unser Ansatz',
+      title: 'Websites, die für dich arbeiten, nicht umgekehrt.',
+      items: {
+        speed: {
+          title: 'Geschwindigkeit, die verkauft',
+          description:
+            'Sofortige Ladezeiten, optimiert für Mobilgeräte. Verwandle lokale Besucher in Anfragen.',
+        },
+        waas: {
+          title: 'Null Kopfschmerzen',
+          description:
+            'Wir kümmern uns um Hosting, Sicherheit und Updates. Du konzentrierst dich auf dein Geschäft.',
+        },
+        seo: {
+          title: 'Optimiert für Google',
+          description:
+            'Strukturierte Optimierung, damit dich Kunden in Berlin vor deiner Konkurrenz finden.',
+        },
+      },
+    },
     pricing: {
       badge: 'Transparente Preise',
-      title: 'Keine Einrichtungskosten. Alles inklusive.',
-      planName: 'WaaS-Abonnement',
-      price: '149€',
-      period: '/monat',
-      feature1: 'Individuelles Design und Entwicklung',
-      feature2: 'Blitzschnelles Hosting & Domain',
-      feature3: 'Wartung und Updates',
-      feature4: '24/7 Priority-Support',
-      cta: 'Jetzt starten',
+      title: 'Wähle dein Modell',
+      tier1Name: 'Eigentümer',
+      tier1Setup: '349€ Einrichtung',
+      tier1Price: '49€',
+      tier1Period: '/Monat',
+      tier1Feature1: 'Design und Entwicklung',
+      tier1Feature2: 'Premium-Hosting und SSL',
+      tier1Feature3: 'DSGVO-Konformität',
+      tier1Feature4: 'Technischer Support und 1h/Monat Updates',
+      tier1Cta: 'Angebot anfordern',
+      tier2Name: 'WaaS-Partner / All-in-One',
+      tier2Setup: '0€ Einrichtung',
+      tier2Price: '149€',
+      tier2Period: '/Monat',
+      tier2Feature1: 'Alles aus dem Eigentümer-Plan',
+      tier2Feature2:
+        'Evolutionäre Wartung (Abschnitte/Text hinzufügen)',
+      tier2Feature3: 'Jährliches Conversion-Audit',
+      tier2Feature4:
+        'Analytics- und Tracking-Infrastruktur',
+      tier2Cta: 'Jetzt starten',
     },
     ctaBlock: {
       title: 'Bereit, dein lokales Geschäft in Berlin zu skalieren?',
@@ -249,10 +348,10 @@ export const ui = {
       stepLabel: 'Schritt',
       stepOf: 'von',
       step1Title: 'Was ist deine größte Herausforderung?',
-      step1OptionSlow: 'Meine Seite ist zu langsam',
-      step1OptionSeo: 'Niemand findet mich bei Google',
-      step1OptionDesign: 'Ich brauche ein frisches Design',
-      step1OptionOther: 'Anderes / Nicht sicher',
+      step1OptionSlow: 'Meine aktuelle Seite ist veraltet oder zu langsam',
+      step1OptionSeo: 'Ich brauche mehr Kunden online',
+      step1OptionDesign: 'Ich starte von Null und brauche eine professionelle Präsenz',
+      step1OptionOther: 'Anderes (Unten erklären)',
       step1Next: 'Weiter',
       step2Title: 'Hilf uns, dein Projekt einzuschätzen',
       step2BudgetLabel: 'Geschätztes Budget',
@@ -287,6 +386,11 @@ export const ui = {
       impressum: 'Impressum',
       privacy: 'Datenschutzerklärung',
       copyright: '© 2026 NeuStudio.',
+    },
+    '404': {
+      title: 'Seite nicht gefunden',
+      subtitle: 'Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben.',
+      backHome: 'Zurück zur Startseite',
     },
   },
 } as const;

@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/ui';
+---
+
+<Layout lang="es" title="404 - Page Not Found | NeuStudio" description="Page not found">
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="text-center max-w-lg">
+      <!-- 404 Graphic -->
+      <div class="mb-8">
+        <span class="text-[8rem] sm:text-[10rem] font-display font-bold text-neu-brand/10 leading-none select-none">
+          404
+        </span>
+      </div>
+
+      <!-- Multi-language message -->
+      <div class="space-y-8">
+        <!-- Spanish -->
+        <div>
+          <h1 class="font-display text-3xl sm:text-4xl font-bold text-neu-dark tracking-tight mb-3">
+            {ui.es['404'].title}
+          </h1>
+          <p class="text-neu-muted text-base sm:text-lg mb-6">
+            {ui.es['404'].subtitle}
+          </p>
+        </div>
+
+        <!-- English -->
+        <div class="border-t border-neu-muted/20 pt-6">
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-neu-dark tracking-tight mb-3">
+            {ui.en['404'].title}
+          </h2>
+          <p class="text-neu-muted text-base sm:text-lg mb-6">
+            {ui.en['404'].subtitle}
+          </p>
+        </div>
+
+        <!-- German -->
+        <div class="border-t border-neu-muted/20 pt-6">
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-neu-dark tracking-tight mb-3">
+            {ui.de['404'].title}
+          </h2>
+          <p class="text-neu-muted text-base sm:text-lg mb-6">
+            {ui.de['404'].subtitle}
+          </p>
+        </div>
+      </div>
+
+      <!-- Back to Home Button -->
+      <div class="mt-10">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-xl bg-neu-brand px-8 py-3 text-base font-semibold text-white transition-all duration-200 hover:bg-neu-brand/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neu-brand focus-visible:ring-offset-2 min-h-[48px]"
+        >
+          {ui.es['404'].backHome}
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

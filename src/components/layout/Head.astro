@@ -5,18 +5,18 @@ interface Props {
   lang: Language;
   title?: string;
   description?: string;
-  image?: string;
+  ogImage?: string;
 }
 
 const {
   lang,
   title = 'NeuStudio',
   description = 'Vanilla Astro project with Tailwind CSS.',
-  image = '/og-image.png',
+  ogImage,
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('http://localhost:4321');
-const ogImage = new URL(image, siteUrl).toString();
+const resolvedOgImage = ogImage ? new URL(ogImage, siteUrl).toString() : undefined;
 
 const pathnameSegments = Astro.url.pathname.split('/').filter(Boolean);
 if (languages.includes(pathnameSegments[0] as Language)) {
@@ -38,6 +38,16 @@ const hreflangLinks = languages.map((locale) => ({
 ---
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0] as HTMLScriptElement,
+    j=d.createElement(s) as HTMLScriptElement,dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode!.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="content-language" content={lang} />
@@ -48,10 +58,19 @@ const hreflangLinks = languages.map((locale) => ({
     <link rel="alternate" hreflang={locale} href={href} />
   ))}
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
+  {resolvedOgImage && <meta property="og:image" content={resolvedOgImage} />}
+  <meta property="og:url" content={Astro.url.toString()} />
+  <meta property="og:locale" content={lang} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -5,11 +5,35 @@ import Button from '../ui/Button.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const features = [
-  t('pricing.feature1'),
-  t('pricing.feature2'),
-  t('pricing.feature3'),
-  t('pricing.feature4'),
+const tiers = [
+  {
+    name: t('pricing.tier1Name'),
+    setup: t('pricing.tier1Setup'),
+    price: t('pricing.tier1Price'),
+    period: t('pricing.tier1Period'),
+    features: [
+      t('pricing.tier1Feature1'),
+      t('pricing.tier1Feature2'),
+      t('pricing.tier1Feature3'),
+      t('pricing.tier1Feature4'),
+    ],
+    cta: t('pricing.tier1Cta'),
+    variant: 'primary' as const,
+  },
+  {
+    name: t('pricing.tier2Name'),
+    setup: t('pricing.tier2Setup'),
+    price: t('pricing.tier2Price'),
+    period: t('pricing.tier2Period'),
+    features: [
+      t('pricing.tier2Feature1'),
+      t('pricing.tier2Feature2'),
+      t('pricing.tier2Feature3'),
+      t('pricing.tier2Feature4'),
+    ],
+    cta: t('pricing.tier2Cta'),
+    variant: 'accent' as const,
+  },
 ];
 ---
 
@@ -24,38 +48,54 @@ const features = [
       </h2>
     </div>
 
-    <div class="mx-auto mt-12 max-w-lg rounded-3xl border border-neu-dark/5 bg-neu-light p-8 text-center shadow-sm">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-neu-muted">
-        {t('pricing.planName')}
-      </p>
+    <div class="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+      {tiers.map((tier) => (
+        <article
+          class={`rounded-3xl border p-8 text-center shadow-sm ${
+            tier.variant === 'accent'
+              ? 'border-neu-accent/20 bg-neu-accent/5 ring-2 ring-neu-accent/20'
+              : 'border-neu-dark/5 bg-neu-light'
+          }`}
+        >
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-neu-muted">
+            {tier.name}
+          </p>
 
-      <div class="mt-6 flex items-end justify-center gap-2">
-        <span class="font-display text-5xl font-bold tracking-tight text-neu-dark md:text-6xl">
-          {t('pricing.price')}
-        </span>
-        <span class="pb-2 text-sm font-medium text-neu-muted">
-          {t('pricing.period')}
-        </span>
-      </div>
+          <div class="mt-4">
+            <span class="inline-block rounded-full bg-neu-dark/5 px-4 py-1 text-sm font-medium text-neu-muted">
+              {tier.setup}
+            </span>
+          </div>
 
-      <ul class="mt-8 space-y-4 text-left">
-        {features.map((feature) => (
-          <li class="flex items-start gap-3 text-neu-dark">
-            <svg class="mt-0.5 h-5 w-5 shrink-0 text-neu-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path
-                fill-rule="evenodd"
-                d="M16.704 5.296a1 1 0 0 1 0 1.408l-7.2 7.2a1 1 0 0 1-1.408 0l-3.2-3.2a1 1 0 1 1 1.408-1.408l2.496 2.496 6.496-6.496a1 1 0 0 1 1.408 0Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span class="text-sm md:text-base">{feature}</span>
-          </li>
-        ))}
-      </ul>
+          <div class="mt-6 flex items-end justify-center gap-2">
+            <span class="font-display text-5xl font-bold tracking-tight text-neu-dark md:text-6xl">
+              {tier.price}
+            </span>
+            <span class="pb-2 text-sm font-medium text-neu-muted">
+              {tier.period}
+            </span>
+          </div>
 
-      <Button variant="accent" class="mt-8 w-full">
-        {t('pricing.cta')}
-      </Button>
+          <ul class="mt-8 space-y-4 text-left">
+            {tier.features.map((feature) => (
+              <li class="flex items-start gap-3 text-neu-dark">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-neu-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 5.296a1 1 0 0 1 0 1.408l-7.2 7.2a1 1 0 0 1-1.408 0l-3.2-3.2a1 1 0 1 1 1.408-1.408l2.496 2.496 6.496-6.496a1 1 0 0 1 1.408 0Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm md:text-base">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <Button variant={tier.variant === 'accent' ? 'accent' : 'primary'} class="mt-8 w-full">
+            {tier.cta}
+          </Button>
+        </article>
+      ))}
     </div>
   </div>
 </section>

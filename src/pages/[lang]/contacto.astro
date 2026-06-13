@@ -111,10 +111,10 @@ const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
 
           <button type="button"
             class="w-full min-h-[56px] rounded-xl border-2 border-neu-dark/10 bg-neu-light px-4 py-4 text-left text-base font-medium text-neu-dark transition-all hover:border-neu-brand hover:bg-neu-brand/5 aria-pressed:border-neu-brand aria-pressed:bg-neu-brand/10 aria-pressed:text-neu-brand"
-            data-pain-point="design"
+            data-pain-point="startup"
             aria-pressed="false"
           >
-            <span class="mr-3" aria-hidden="true">🎨</span>
+            <span class="mr-3" aria-hidden="true">🚀</span>
             {t('contactForm.step1OptionDesign')}
           </button>
 
@@ -126,6 +126,17 @@ const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
             <span class="mr-3" aria-hidden="true">💬</span>
             {t('contactForm.step1OptionOther')}
           </button>
+
+          <!-- Hidden textarea for Option 4 — becomes visible when "Other" is selected -->
+          <div id="custom-pain-point-container" class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+            <textarea
+              id="custom-pain-point"
+              name="custom_pain_point"
+              rows="3"
+              placeholder="Tell us more about what you need..."
+              class="mt-2 w-full rounded-xl border border-neu-dark/10 bg-neu-light px-4 py-3 text-neu-dark placeholder:text-neu-muted/60 focus:border-neu-brand focus:outline-none focus:ring-2 focus:ring-neu-brand/20 resize-none transition-all"
+            ></textarea>
+          </div>
 
           <div class="pt-4 text-right">
             <button type="button" id="step1-next"
@@ -341,6 +352,8 @@ const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
     // ─── Step 1: Pain point toggle buttons ───
     const painButtons = form.querySelectorAll('[data-pain-point]');
     let selectedPain = '';
+    const customPainContainer = document.getElementById('custom-pain-point-container');
+    const customPainTextarea = document.getElementById('custom-pain-point') as HTMLTextAreaElement | null;
 
     painButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -351,6 +364,19 @@ const localizedRoot = lang === defaultLanguage ? '/' : `/${lang}/`;
         btn.setAttribute('aria-pressed', 'true');
         selectedPain = btn.getAttribute('data-pain-point') || '';
         if (fieldPainPoint) fieldPainPoint.value = selectedPain;
+
+        // Toggle textarea visibility when "Other" is selected
+        const isOther = selectedPain === 'other';
+        if (customPainContainer) {
+          if (isOther) {
+            customPainContainer.classList.remove('max-h-0', 'opacity-0');
+            customPainContainer.classList.add('max-h-48', 'opacity-100');
+            if (customPainTextarea) customPainTextarea.focus();
+          } else {
+            customPainContainer.classList.remove('max-h-48', 'opacity-100');
+            customPainContainer.classList.add('max-h-0', 'opacity-0');
+          }
+        }
 
         // Enable next button
         const nextBtn = document.getElementById('step1-next');

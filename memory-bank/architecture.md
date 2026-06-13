@@ -4,36 +4,24 @@
 - **Framework:** Astro (strictly Vanilla, SSG).
 - **Styling:** Tailwind CSS (Mobile-first).
 - **Logic:** TypeScript (Strict Mode ENABLED).
-- **The "Zero-JS" Rule:** Zero client-side JavaScript by default. Third-party UI frameworks (React, Vue) are strictly FORBIDDEN. Use Vanilla JS exclusively for simple UI toggles.
+- **The "Zero-JS" Rule:** Zero client-side JavaScript by default. Third-party UI frameworks (React, Vue) are strictly FORBIDDEN. Use lightweight Vanilla JS scoped in Astro `<script>` tags for UI interactions (e.g., multi-step forms, cookie banners).
 
 ## 2. Design System & UI Constraints
-- **Semantic Tokens:** NEVER use arbitrary colors. Strictly use `tailwind.config.mjs` tokens:
-  - `brand`: `#0047ff` (Primary interactions).
-  - `dark`: `#0f172a` (Headings/Base text).
-  - `light`: `#f2f4f7` (Backgrounds/Canvas).
-  - `muted`: `#475569` (Secondary text/Borders).
-  - `accent`: `#ff5a36` (ONLY for high-conversion CTAs).
+- **Semantic Tokens:** NEVER use arbitrary colors. Strictly use `tailwind.config.mjs` tokens (`brand`, `dark`, `light`, `muted`, `accent`).
 - **Typography:** `font-sans` (Inter) for body, `font-display` (Syne) + `tracking-tight` for headings.
-- **Geometry & UI:**
-  - `rounded-xl` (12px) for atomic elements (buttons, inputs).
-  - `rounded-3xl` (24px) for cards and sections.
-  - Glassmorphism (`bg-white/80 backdrop-blur-md`) for sticky navbars.
+- **Geometry:** `rounded-xl` (12px) for atomic elements, `rounded-3xl` (24px) for cards.
+- **Touch Targets:** Minimum hit area of 48x48px on mobile for all interactive elements.
 
-## 3. Responsive & Mobile-First Architecture
-- Mobile layouts must be strictly single-column with comfortable thumb-zone padding (`px-4`).
-- Touch Targets: Minimum hit area of 48x48px on mobile for all interactive elements.
-- Desktop Scaling: Enforce `max-w-7xl mx-auto` to prevent infinite stretching on wide monitors.
-
-## 4. Component Structure
-- `src/components/ui/`: Atomic, reusable, stateless components. No business logic.
-- `src/components/sections/`: Full-width page blocks composing UI components.
-- `src/components/layout/`: Global structural wrappers.
-
-## 5. i18n & Data Modeling
+## 3. i18n & Content Layer
 - **Zero Hardcoded Text:** All UI strings must use Astro's native i18n routing and `src/i18n/ui.ts`.
-- **Content Collections:** Portfolio and services MUST use `src/content/` with strict Zod schemas (`config.ts`) enforcing required fields (title, client, metrics).
+- **Strategic Portfolio Deactivation:** The `portfolio` content collection and Zod schemas exist and are fully valid, BUT are currently deactivated via 302 redirects in `src/pages/[lang]/portfolio.astro`. Do not reactivate until explicit real case studies are provided.
 
-## 6. Forms & Compliance (DSGVO)
-- **Lead Capture:** Use native HTML forms with Netlify Forms (`data-netlify="true"`). NEVER use `mailto:` links.
-- **Analytics:** ONLY Google Tag Manager (GTM) is allowed in `<Head.astro>`. Direct GA4/Meta Pixel scripts are forbidden. Assume strict Google Consent Mode v2.
-- **Assets:** All fonts hosted locally. Images MUST use Astro's native `<Image />` component.
+## 4. Lead Generation & Forms
+- **Multi-Step Contact Form:** Located at `/${lang}/contacto`. Uses native HTML and Vanilla JS to toggle visibility between qualification steps.
+- **Infrastructure:** Powered exclusively by Netlify Forms (`data-netlify="true"`). Hidden fields are used to pass multi-step data. NEVER use `mailto:` links.
+
+## 5. SEO, Analytics & Compliance (DSGVO)
+- **Legal Pages:** `/impressum` and `/privacy` use Tailwind Typography (`prose`). The actual legal texts are pasted manually to avoid LLM hallucinations.
+- **Cookie Consent:** `<CookieBanner />` uses Vanilla JS and `localStorage`. It dispatches a `consentGranted` window event.
+- **Tracking:** Google Tag Manager (GTM) is hardcoded in `<Head.astro>` and `<Layout.astro>` but relies on the consent event.
+- **SEO Elements:** `@astrojs/sitemap` is integrated. `Head.astro` accepts dynamic `title`, `description`, and `ogImage` props for Open Graph / Twitter Cards. `404.astro` provides a localized fallback.
