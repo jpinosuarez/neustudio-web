@@ -1,18 +1,21 @@
-# NeuStudio - WaaS Architecture Rules
+# NeuStudio - AI Agent Global Directives
 
-## General Directives (Always Active)
-- **DSGVO Compliance First:** NEVER integrate external tracking scripts, CDNs (e.g., Google Fonts), or third-party analytics without explicit prior consent logic. All fonts and assets MUST be hosted locally.
-- **Output Style:** Do not provide long theoretical explanations. Output production-ready code directly.
-- **Gatekeeper:** If you detect a performance or compliance issue in my prompt, STOP and suggest a better, static alternative before writing code.
-- **Memory Bank:** Always consult the `memory-bank/` directory (`projectbrief.md`, `architecture.md`, `activeContext.md`) to maintain project context before executing complex architectural changes.
+## 1. General Directives (Always Active)
+- **DSGVO Compliance First:** NEVER integrate external tracking scripts, CDNs (e.g., Google Fonts), or third-party analytics without explicit prior consent logic[cite: 14]. All fonts and assets MUST be hosted locally[cite: 14].
+- **Output Style:** Do not provide long theoretical explanations[cite: 14]. Output production-ready code directly[cite: 14].
+- **Gatekeeper:** If you detect a performance or compliance issue in a prompt, STOP and suggest a better, static alternative before writing code[cite: 14].
+- **Memory Bank:** Always consult the `memory-bank/` directory (`projectbrief.md`, `architecture.md`, `design-system.md`) to maintain project context before executing complex architectural changes[cite: 14].
 
-[*.{astro,tsx,jsx}]
-- **Tech Stack:** Astro (SSG, zero client-side JS by default) + Tailwind CSS (Mobile-first).
-- **Component Reuse:** ALWAYS read the contents of `src/components/ui/` to check for existing components (like Buttons, Cards, Logos) before creating new ones. Match existing props exactly.
-- **Client-Side JS Limits:** NEVER install third-party UI libraries (React, Framer Motion) unless explicitly asked. Use Vanilla JS inside Astro `<script>` tags EXCLUSIVAMENTE for UI toggles (menus, modals). Data fetching must happen on the server.
+## 2. Tech Stack & Engineering Rules [*.{astro,tsx,jsx}]
+- **Tech Stack:** Astro (SSG, zero client-side JS by default) + Tailwind CSS (Mobile-first)[cite: 14].
+- **Component Reuse:** ALWAYS read the contents of `src/components/ui/` to check for existing components (like Buttons, Cards, Logos) before creating new ones[cite: 14]. Match existing props exactly[cite: 14].
+- **Client-Side JS Limits:** NEVER install third-party UI libraries (React, Framer Motion) unless explicitly asked[cite: 14]. Use Vanilla JS inside Astro `<script>` tags EXCLUSIVELY for UI toggles (menus, modals)[cite: 14]. Data fetching must happen on the server[cite: 14].
+- **Strict Logic [*.ts]:** Strict TypeScript only[cite: 14]. No `any` types allowed[cite: 14].
 
-[*.ts]
-- **Strict Logic:** Strict TypeScript only. No `any` types allowed.
+## 3. i18n & Content Layer [src/i18n/**/*]
+- **Zero Hardcoded Text:** All visible copy must be consumed from `src/i18n/ui.ts`[cite: 14]. Translation keys must be semantic and maintain the native i18n structure (ES/EN/DE) using dynamic routing `/[lang]/`[cite: 14]. No heavy external i18n libraries allowed[cite: 12].
 
-[src/i18n/**/*]
-- **Zero Hardcoded Text:** All visible copy must be consumed from `src/i18n/ui.ts`. Translation keys must be semantic and maintain the native i18n structure (ES/EN/DE) using dynamic routing `/[lang]/`.
+## 4. Design & Aesthetics Guardrails
+- **Tokens Only:** STRICTLY use `tailwind.config.mjs` semantic tokens (`brand`, `dark`, `light`, `muted`, `accent`, `interactive`)[cite: 12].
+- **No Boring Layouts:** Use subtle geometric shapes, curved lines, and interactive states (hovers)[cite: 10].
+- **Anti-References:** DO NOT use generic stock photos, dense technical jargon, or slow animations.
