@@ -16,7 +16,7 @@ export const ui = {
       proposal: 'Solicitar propuesta',
     },
     hero: {
-      socialProof: '⭐⭐⭐⭐⭐ Confiado por negocios locales en Berlín',
+      badge: 'Carga en < 2s · Puntuación Google 100/100',
       headline: 'Tu Web Lista en 7 Días. Más Rápido. Más Ventas.',
       subtitle:
         'Atrae más clientes sin esperar. Webs ultrarrápidas que convierten visitas en reservas al instante.',
@@ -144,7 +144,7 @@ export const ui = {
       proposal: 'Request proposal',
     },
     hero: {
-      socialProof: '⭐⭐⭐⭐⭐ Trusted by local businesses in Berlin',
+      badge: 'Loads in < 2s · Google Score 100/100',
       headline: 'Your Website in 7 Days. Faster. More Leads.',
       subtitle:
         'Attract more clients without waiting. Ultra-fast websites that convert visits into bookings instantly.',
@@ -272,7 +272,7 @@ export const ui = {
       proposal: 'Angebot anfordern',
     },
     hero: {
-      socialProof: '⭐⭐⭐⭐⭐ Von lokalen Unternehmen in Berlin geschätzt',
+      badge: 'Lädt in < 2s · Google-Bewertung 100/100',
       headline: 'Deine Website in 7 Tagen. Schneller. Mehr Umsatz.',
       subtitle:
         'Mehr Kunden gewinnen, ohne zu warten. Ultraschnelle Websites, die Besuche sofort in Buchungen verwandeln.',

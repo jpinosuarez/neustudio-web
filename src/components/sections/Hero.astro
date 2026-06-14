@@ -7,11 +7,9 @@ const t = useTranslations(lang);
 
 <section class="px-4 py-16 md:px-6 lg:py-24 max-w-7xl mx-auto flex flex-col items-center text-center">
   <div class="max-w-4xl">
-    <div class="rounded-xl bg-neu-brand/10 text-neu-dark px-3 py-1 text-sm font-semibold mb-4 inline-flex items-center gap-1">
-      <svg class="w-4 h-4 text-neu-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 2.25l2.934 5.94 6.556.953-4.745 4.627 1.12 6.53L12 17.97l-5.865 3.33 1.12-6.53L2.51 9.143l6.556-.953L12 2.25z" />
-      </svg>
-      <span>{t('hero.socialProof')}</span>
+    <div class="inline-flex items-center gap-2 rounded-full border border-neu-dark/5 bg-white px-4 py-1.5 text-sm font-medium text-neu-muted mb-6">
+      <span class="flex h-2 w-2 rounded-full bg-neu-brand"></span>
+      <span>{t('hero.badge')}</span>
     </div>
     <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neu-dark mt-6 leading-tight">
       {t('hero.headline')}
