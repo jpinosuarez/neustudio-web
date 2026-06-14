@@ -53,7 +53,7 @@ const tiers = [
     <div class="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
       {tiers.map((tier) => (
         <article
-          class={`rounded-3xl border p-8 text-center shadow-sm ${
+          class={`flex flex-col h-full rounded-3xl border p-8 text-center ${
             tier.variant === 'accent'
               ? 'border-neu-accent/20 bg-neu-accent/5 ring-2 ring-neu-accent/20'
               : 'border-neu-dark/5 bg-neu-light'
@@ -78,7 +78,7 @@ const tiers = [
             </span>
           </div>
 
-          <ul class="mt-8 space-y-4 text-left">
+          <ul class="mt-8 flex-1 space-y-4 text-left">
             {tier.features.map((feature) => (
               <li class="flex items-start gap-3 text-neu-dark">
                 <svg class="mt-0.5 h-5 w-5 shrink-0 text-neu-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -93,7 +93,7 @@ const tiers = [
             ))}
           </ul>
 
-          <Button variant={tier.variant === 'accent' ? 'accent' : 'primary'} href={tier.href} class="mt-8 w-full">
+          <Button variant={tier.variant === 'accent' ? 'accent' : 'primary'} href={tier.href} class="mt-auto w-full">
             {tier.cta}
           </Button>
         </article>

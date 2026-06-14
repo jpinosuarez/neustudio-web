@@ -20,3 +20,32 @@
     @apply font-display leading-tight tracking-tight;
   }
 }
+
+@layer utilities {
+  .bg-grid-orb {
+    @apply relative;
+  }
+
+  .bg-grid-orb::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-0;
+    background-image:
+      linear-gradient(rgba(0, 71, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 71, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-grid-orb::after {
+    content: '';
+    @apply pointer-events-none absolute z-0;
+    top: -15%;
+    right: -8%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.10) 0%, transparent 70%);
+  }
+
+  .bg-grid-orb > * {
+    @apply relative z-10;
+  }
+}

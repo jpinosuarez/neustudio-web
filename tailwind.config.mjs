@@ -10,6 +10,7 @@ export default {
           light: '#f2f4f7',
           muted: '#475569',
           accent: '#ff5a36',
+          interactive: '#d946ef',
         },
       },
       fontFamily: {

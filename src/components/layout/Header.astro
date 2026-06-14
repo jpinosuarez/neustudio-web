@@ -61,7 +61,7 @@ const navItems = [
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden absolute left-0 top-full w-full border-b border-neu-dark/5 bg-white shadow-sm">
+  <div id="mobile-menu" class="hidden md:hidden absolute left-0 top-full w-full border-b border-neu-dark/5 bg-white pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
     <nav aria-label="Mobile primary navigation" class="flex flex-col">
       {navItems.map((item) => (
         <a
