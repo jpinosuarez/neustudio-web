@@ -11,6 +11,7 @@ export default {
           muted: '#475569',
           accent: '#ff5a36',
           interactive: '#d946ef',
+          'interactive-cyan': '#22d3ee',
         },
       },
       fontFamily: {

@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import TechStackTicker from '../components/sections/TechStackTicker.astro';
 import ServicesBento from '../components/sections/ServicesBento.astro';
 import Pricing from '../components/sections/Pricing.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
@@ -18,7 +17,6 @@ const t = useTranslations(lang);
 
 <Layout lang={lang} title="NeuStudio" description={t('footer.tagline')}>
   <Hero />
-  <TechStackTicker />
   <ServicesBento />
   <Pricing />
   <FinalCta />

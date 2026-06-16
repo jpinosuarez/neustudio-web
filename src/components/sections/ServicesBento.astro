@@ -4,96 +4,43 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const copyByLanguage = {
-  es: {
-    eyebrow: 'Nuestro Enfoque',
-    heading: 'Webs que trabajan por ti, no al revés',
-    speedTitle: 'Velocidad que Vende',
-    speedDescription:
-      'Tiempos de carga instantáneos diseñados para móvil. Convierte el tráfico local en clientes potenciales.',
-    waasTitle: 'Cero Dolores de Cabeza',
-    waasDescription:
-      'Gestionamos hosting, seguridad y actualizaciones. Tú concéntrate en hacer crecer tu negocio.',
-    seoTitle: 'Construido para Google',
-    seoDescription:
-      'Estructura optimizada para que tus clientes en Berlín te encuentren antes que a tu competencia.',
-  },
-  en: {
-    eyebrow: 'Our Approach',
-    heading: 'Websites that work for you, not the other way around',
-    speedTitle: 'Speed that Sells',
-    speedDescription:
-      'Instant load times designed for mobile. Turn local traffic into leads.',
-    waasTitle: 'Zero Headaches',
-    waasDescription:
-      'We handle hosting, security, and updates. You focus on running your business.',
-    seoTitle: 'Built for Google',
-    seoDescription:
-      'Optimized structure so your clients in Berlin find you before your competition.',
-  },
-  de: {
-    eyebrow: 'Unser Ansatz',
-    heading: 'Websites, die für dich arbeiten, nicht umgekehrt',
-    speedTitle: 'Geschwindigkeit, die verkauft',
-    speedDescription:
-      'Sofortige Ladezeiten, optimiert für Mobilgeräte. Verwandle lokale Besucher in Anfragen.',
-    waasTitle: 'Null Kopfschmerzen',
-    waasDescription:
-      'Wir kümmern uns um Hosting, Sicherheit und Updates. Du konzentrierst dich auf dein Geschäft.',
-    seoTitle: 'Optimiert für Google',
-    seoDescription:
-      'Strukturierte Optimierung, damit dich Kunden in Berlin vor deiner Konkurrenz finden.',
-  },
-} as const;
-
-const defaults = copyByLanguage[lang];
-
-const readText = (key: string, fallback: string) => {
-  const translated = t(key as never);
-
-  return translated === key ? fallback : translated;
-};
-
-const sectionLabel = readText('services.badge', defaults.eyebrow);
-const sectionHeading = readText('services.title', defaults.heading);
-
 const services = [
   {
-    title: readText('services.items.speed.title', defaults.speedTitle),
-    description: readText('services.items.speed.description', defaults.speedDescription),
+    title: t('services.speedTitle'),
+    description: t('services.speedDescription'),
     accentClass: 'bg-neu-brand/10 text-neu-brand',
   },
   {
-    title: readText('services.items.waas.title', defaults.waasTitle),
-    description: readText('services.items.waas.description', defaults.waasDescription),
-    accentClass: 'bg-neu-dark/5 text-neu-dark',
+    title: t('services.waasTitle'),
+    description: t('services.waasDescription'),
+    accentClass: 'bg-white/10 text-neu-light',
   },
   {
-    title: readText('services.items.seo.title', defaults.seoTitle),
-    description: readText('services.items.seo.description', defaults.seoDescription),
+    title: t('services.seoTitle'),
+    description: t('services.seoDescription'),
     accentClass: 'bg-neu-accent/10 text-neu-accent',
   },
 ];
 ---
 
-<section id="servicios" class="bg-neu-light py-24">
+<section id="servicios" class="bg-neu-dark py-24">
   <div class="mx-auto max-w-7xl px-4 md:px-6">
     <div class="max-w-3xl">
-      <div class="inline-flex min-h-12 items-center rounded-xl border border-neu-dark/5 bg-white px-4 text-sm font-semibold text-neu-muted">
-        {sectionLabel}
+      <div class="inline-flex min-h-12 items-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-4 text-sm font-semibold text-neu-light">
+        {t('services.badge')}
       </div>
-      <h2 class="mt-5 font-display text-3xl font-bold tracking-tight text-neu-dark md:text-5xl">
-        {sectionHeading}
+      <h2 class="mt-5 font-display text-3xl font-bold tracking-tight text-neu-light md:text-5xl">
+        {t('services.title')}
       </h2>
     </div>
 
     <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
       {services.map((service) => (
-        <article class="flex h-full flex-col rounded-3xl border border-neu-dark/5 bg-white p-8 shadow-sm">
+        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-8">
           <div class={`mb-6 flex h-12 w-12 items-center justify-center rounded-full ${service.accentClass}`}>
             <span class="h-3 w-3 rounded-full bg-current" aria-hidden="true"></span>
           </div>
-          <h3 class="mb-3 text-xl font-bold text-neu-dark">{service.title}</h3>
+          <h3 class="mb-3 text-xl font-bold text-neu-light">{service.title}</h3>
           <p class="text-neu-muted">{service.description}</p>
         </article>
       ))}

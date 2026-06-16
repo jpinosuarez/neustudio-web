@@ -5,13 +5,22 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="px-4 py-16 md:px-6 lg:py-24 max-w-7xl mx-auto flex flex-col items-center text-center">
-  <div class="max-w-4xl">
-    <div class="inline-flex items-center gap-2 rounded-full border border-neu-dark/5 bg-white px-4 py-1.5 text-sm font-medium text-neu-muted mb-6">
-      <span class="flex h-2 w-2 rounded-full bg-neu-brand"></span>
-      <span>{t('hero.badge')}</span>
+<section class="relative px-4 py-16 md:px-6 lg:py-24 max-w-7xl mx-auto flex flex-col items-center text-center">
+  <!-- Start of Hover Grid -->
+  <div class="absolute inset-0 z-0 h-full w-full overflow-hidden">
+    <div class="grid h-full w-full grid-cols-10 grid-rows-10">
+      {Array.from({ length: 100 }).map(() => (
+        <div class="h-full w-full border border-white/5 transition-colors duration-1000 ease-out hover:bg-neu-interactive/20 hover:duration-0" />
+      ))}
     </div>
-    <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neu-dark mt-6 leading-tight">
+  </div>
+  <!-- End of Hover Grid -->
+  <div class="relative z-10 max-w-4xl">
+    <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-neu-light mb-6">
+      <span class="flex h-2 w-2 rounded-full bg-neu-brand"></span>
+      <span>{t('hero.authorityBadge')}</span>
+    </div>
+    <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neu-light mt-6 leading-tight">
       {t('hero.headline')}
     </h1>
     <p class="font-sans text-lg md:text-xl text-neu-muted mt-4 max-w-2xl mx-auto">

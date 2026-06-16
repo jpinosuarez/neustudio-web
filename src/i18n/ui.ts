@@ -17,6 +17,7 @@ export const ui = {
     },
     hero: {
       badge: 'Carga en < 2s · Puntuación Google 100/100',
+      authorityBadge: 'Una web que atrae clientes',
       headline: 'Tu Web Lista en 7 Días. Más Rápido. Más Ventas.',
       subtitle:
         'Atrae más clientes sin esperar. Webs ultrarrápidas que convierten visitas en reservas al instante.',
@@ -27,6 +28,12 @@ export const ui = {
     services: {
       badge: 'Nuestro Enfoque',
       title: 'Webs que trabajan por ti, no al revés.',
+      speedTitle: 'Velocidad que Vende',
+      speedDescription: 'Tiempos de carga instantáneos diseñados para móvil. Convierte el tráfico local en clientes potenciales.',
+      waasTitle: 'Cero Dolores de Cabeza',
+      waasDescription: 'Gestionamos hosting, seguridad y actualizaciones. Tú concéntrate en hacer crecer tu negocio.',
+      seoTitle: 'Construido para Google',
+      seoDescription: 'Estructura optimizada para que tus clientes en Berlín te encuentren antes que a tu competencia.',
       items: {
         speed: {
           title: 'Velocidad que Vende',
@@ -145,6 +152,7 @@ export const ui = {
     },
     hero: {
       badge: 'Loads in < 2s · Google Score 100/100',
+      authorityBadge: 'A website that wins clients',
       headline: 'Your Website in 7 Days. Faster. More Leads.',
       subtitle:
         'Attract more clients without waiting. Ultra-fast websites that convert visits into bookings instantly.',
@@ -155,6 +163,12 @@ export const ui = {
     services: {
       badge: 'Our Approach',
       title: 'Websites that work for you, not the other way around.',
+      speedTitle: 'Speed that Sells',
+      speedDescription: 'Instant load times designed for mobile. Turn local traffic into leads.',
+      waasTitle: 'Zero Headaches',
+      waasDescription: 'We handle hosting, security, and updates. You focus on running your business.',
+      seoTitle: 'Built for Google',
+      seoDescription: 'Optimized structure so your clients in Berlin find you before your competition.',
       items: {
         speed: {
           title: 'Speed that Sells',
@@ -273,6 +287,7 @@ export const ui = {
     },
     hero: {
       badge: 'Lädt in < 2s · Google-Bewertung 100/100',
+      authorityBadge: 'Eine Website, die Kunden gewinnt',
       headline: 'Deine Website in 7 Tagen. Schneller. Mehr Umsatz.',
       subtitle:
         'Mehr Kunden gewinnen, ohne zu warten. Ultraschnelle Websites, die Besuche sofort in Buchungen verwandeln.',
@@ -283,6 +298,12 @@ export const ui = {
     services: {
       badge: 'Unser Ansatz',
       title: 'Websites, die für dich arbeiten, nicht umgekehrt.',
+      speedTitle: 'Geschwindigkeit, die verkauft',
+      speedDescription: 'Sofortige Ladezeiten, optimiert für Mobilgeräte. Verwandle lokale Besucher in Anfragen.',
+      waasTitle: 'Null Kopfschmerzen',
+      waasDescription: 'Wir kümmern uns um Hosting, Sicherheit und Updates. Du konzentrierst dich auf dein Geschäft.',
+      seoTitle: 'Optimiert für Google',
+      seoDescription: 'Strukturierte Optimierung, damit dich Kunden in Berlin vor deiner Konkurrenz finden.',
       items: {
         speed: {
           title: 'Geschwindigkeit, die verkauft',
